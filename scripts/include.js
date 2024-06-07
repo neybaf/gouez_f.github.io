@@ -1,9 +1,9 @@
 function includeHTML() {
-    const baseUrl = window.location.origin + '/gouez_f';  // Définir l'URL de base
+    const baseUrl = window.location.href;  // Use the current document's URL as the base
 
     document.querySelectorAll('[data-include]').forEach(el => {
         let file = el.getAttribute('data-include');
-        let filePath = new URL(file, baseUrl).href;  // Construire un chemin absolu
+        let filePath = new URL(file, baseUrl).href;  // Construct an absolute path
 
         fetch(filePath)
             .then(response => {
