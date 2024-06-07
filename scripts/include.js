@@ -1,8 +1,11 @@
 function includeHTML() {
-    let elements = document.querySelectorAll('[data-include]');
-    elements.forEach(el => {
+    const baseUrl = window.location.origin + '/gouez_f';  // Définir l'URL de base
+
+    document.querySelectorAll('[data-include]').forEach(el => {
         let file = el.getAttribute('data-include');
-        fetch(file)
+        let filePath = new URL(file, baseUrl).href;  // Construire un chemin absolu
+
+        fetch(filePath)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
