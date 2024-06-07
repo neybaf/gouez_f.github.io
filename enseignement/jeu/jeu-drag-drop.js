@@ -97,7 +97,7 @@ function loadQuestion() {
     dropItem.className = 'droppable';
     dropItem.ondrop = drop;
     dropItem.ondragover = allowDrop;
-    dropItem.textContent = `Déposez ici : ${answer}`;
+    dropItem.textContent = `Déposez ici votre réponse `;
     dropContainer.appendChild(dropItem);
   });
 
@@ -153,7 +153,7 @@ if (game === 'villes-de-france') {
   csvFile = 'questions-passe-compose.csv';
   gameTitle = 'Jeu de grammaire : Le passé composé';
 } else {
-  window.location.href = 'index_jeu.html';
+  window.location.href = 'jeu.html';
   
 }
 
