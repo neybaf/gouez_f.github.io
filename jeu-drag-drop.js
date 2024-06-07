@@ -133,7 +133,7 @@ function replay() {
 }
 
 function returnToMenu() {
-  window.location.href = 'index.html';
+  window.location.href = 'index_jeu.html';
 }
 
 document.getElementById('replay-button').addEventListener('click', replay);
@@ -153,7 +153,7 @@ if (game === 'villes-de-france') {
   csvFile = 'questions-passe-compose.csv';
   gameTitle = 'Jeu de grammaire : Le passé composé';
 } else {
-  window.location.href = 'index.html';
+  window.location.href = 'index_jeu.html';
   
 }
 
