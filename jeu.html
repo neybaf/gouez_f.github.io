@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu de Drag & Drop</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .drag-container, .drop-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .draggable {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .droppable {
+      padding: 20px;
+      margin: 10px;
+      background-color: #ddd;
+      border: 2px dashed #ccc;
+      border-radius: 5px;
+      min-width: 150px;
+      min-height: 50px;
+    }
+    #score {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    footer {
+      font-family: Arial, sans-serif;
+      color: silver;
+      background-color: #f4f4f4;
+      text-align: left;
+      position: fixed;
+      font-size: xx-small;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="game-title">Jeu de Drag & Drop</h1>
+  <div id="timer">Temps restant: 10 s</div>
+  <div id="question-container" class="container">
+    <div id="question" class="question">Les questions apparaîtront ici</div>
+    <div id="drag-container" class="drag-container"></div>
+    <div id="drop-container" class="drop-container"></div>
+  </div>
+  <div id="score"></div>
+  <button onclick="nextQuestion()">Question suivante</button>
+  <p>
+    <button id="replay-button">Rejouer</button>
+    <button id="menu-button">Retour au menu</button>
+  </p>
+  <div id="end-buttons" style="display:none;">
+    <button id="replay-button">Rejouer</button>
+    <button id="menu-button">Retour au menu</button>
+  </div>
+  <script src="jeu-drag-drop.js"></script>
+</body>
+  <footer> Fabien Gouez, 2024
+    <p>
+      <a href="home.html">Home</a>
+    </p>
+  </footer>
+</html>
