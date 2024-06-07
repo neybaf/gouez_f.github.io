@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recherches en cours</title>
-  <link rel="stylesheet" href="../styles.css">
-</head>
-<body>
-  <header>
-    <h1>Recherches</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">À propos</a></li>
-        <li><a href="recherches/research.html">Recherches</a></li>
-        <li><a href="../enseignement/teaching.html">Enseignement</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="include.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Recherches</h1>
+      <div data-include="header.html"></div>
+    </header>
   <main>
     <section>
       <h2>Travaux en cours</h2>
@@ -33,8 +27,8 @@
       <p>Infos.</p>
     </section>
   </main>
-  <footer>
-    <p>&copy; <span id="current-year"></span> Fabien Gouez</p>
-  </footer>
+    <footer>
+      <div data-include="footer.html"></div>
+    </footer>
 </body>
 </html>
