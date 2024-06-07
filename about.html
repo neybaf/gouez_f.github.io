@@ -5,18 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="include.js" defer></script>
 </head>
 <body>
   <header>
     <h1>About Me</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="recherches/research.html">Recherches</a></li>
-        <li><a href="enseignement/teaching.html">Enseignement</a></li>
-      </ul>
-    </nav>
+    <div data-include="header.html"></div>
   </header>
   <main>
     <section>
@@ -33,8 +27,6 @@
       <p>disismaloretipsum</p>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Fabien Gouez</p>
-  </footer>
+  <div data-include="footer.html"></div>
 </body>
 </html>
