@@ -1,0 +1,81 @@
+---
+title: "Co-texte rapide"
+author: "Fabien Gouez"
+date: "2024-05-28"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(shiny)
+library(readr)
+library(R.temis)
+library(quanteda)
+library(knitr)
+library(kableExtra)
+library(plotly)
+library(DT)
+```
+
+```{r}
+ui <- fluidPage(
+  titlePanel("Analyse de Co-texte"),
+  sidebarLayout(
+    sidebarPanel(
+      textInput("myterm", "Mot clé:", value = "révolution"),
+      textInput("auteur", "Auteur:", value = "Fabien Gouez"),
+      textInput("source_docs", "Source:", value = "CLC-PEP"),
+      actionButton("update", "Mettre à jour")
+    ),
+    mainPanel(
+      DTOutput("ngramTable"),
+      plotlyOutput("ngramPlot"),
+      downloadButton("downloadData", "Télécharger les données")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$update, {
+    # Charger les données et créer le corpus
+    dir_comb <- "/Users/fabiengouez/Desktop/CLC_corpus/combined"
+    files_comb <- list.files(dir_comb, pattern = "\\.txt$", full.names = TRUE)
+    corpus_comb <- Corpus(URISource(files_comb), readerControl = list(reader = readPlain))
+    dtm_comb <- build_dtm(corpus_comb, remove_stopwords = FALSE)
+
+    corpus_combined <- readLines("/Users/fabiengouez/Desktop/CLC_corpus/combined/combined.txt")
+    my_corpus_combined_toks <- tokens(corpus_combined)
+    my_corpus_combined_ngrams <- tokens_ngrams(my_corpus_combined_toks)
+    ngram_extract <- quanteda::tokens_compound(my_corpus_combined_toks, pattern = my_corpus_combined_ngrams)
+
+    ngram_kwic <- kwic(ngram_extract, pattern = c(input$myterm)) %>%
+      as.data.frame() %>%
+      dplyr::select(-to, -from, -pattern)
+    
+    # Tableau interactif
+    output$ngramTable <- renderDT({
+      datatable(ngram_kwic)
+    })
+    
+    # Graphique interactif (exemple simple)
+    output$ngramPlot <- renderPlotly({
+      plot_ly(data = ngram_kwic, x = ~docname, y = ~pre, type = 'bar')
+    })
+    
+    # Télécharger les données
+    output$downloadData <- downloadHandler(
+      filename = function() {
+        paste("ngram_data-", Sys.Date(), ".csv", sep="")
+      },
+      content = function(file) {
+        write.csv(ngram_kwic, file)
+      }
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
