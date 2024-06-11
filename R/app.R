@@ -1,5 +1,5 @@
 # app. R de concordancier, collocations et ngrams
-install.packages(c("shinylive", "httpuv"))
+install.packages(c("shinylive"))
 
 library(shiny)
 library(readr)
@@ -250,4 +250,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-shinylive::export(appdir = "/Users/fabiengouez/Desktop/dossier sans titre", destdir = "docs")
+shinylive::export(appdir = "/Users/fabiengouez/Documents/GitHub/blog/shinylive", destdir = "docs")
