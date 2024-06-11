@@ -1,34 +1,12 @@
 # app. R de concordancier, collocations et ngrams
-install.packages(c("shinylive"))
-
 library(shiny)
+library(shinylive)
 library(readr)
-library(quanteda)
 library(DT)
 library(udpipe)
-library(igraph)
-library(ggraph)
-library(quanteda.textstats)
-library(knitr)
-library(R.temis)
-library(plotly)
-library(dplyr)
-library(shinylive)
-library(httpuv)
-# CSS pour agrandir la fenêtre
-css <- "
-#ngramTable, #ngramPlot, #semanticNetwork {
-  height: 1600;
-}
-.shiny-output-error-validation {
-  color: red;
-}
-"
+library(ggplot2)
 
 ui <- fluidPage(
-  tags$head(
-    tags$style(HTML(css))
-  ),
   titlePanel("Analyse de Co-texte"),
   sidebarLayout(
     sidebarPanel(
@@ -52,13 +30,18 @@ ui <- fluidPage(
         condition = "input.analysis_type == 'Co-occurrences'",
         textInput("myterm", "Mot clé:", value = "texte")
       ),
+      conditionalPanel(
+        condition = "input.analysis_type == 'Ngrams'",
+        textInput("n_mini", "Ngrams minimum", value = 2),
+        textInput("n_maxi", "Ngrams maximum", value = 5)
+      ),
       actionButton("update", "Mettre à jour"),
       downloadButton("downloadData", "Télécharger les données")
     ),
     mainPanel(
       DTOutput("ngramTable"),
       uiOutput("cooccurrenceTable"),
-      plotlyOutput("ngramPlot", height = "700px") # Ajout de height pour agrandir le graphique
+      plotOutput("ngramPlot", height = "700px") # Ajout de height pour agrandir le graphique
     )
   )
 )
@@ -92,7 +75,7 @@ server <- function(input, output, session) {
     tokens_comb <- tokens(combined_text)
     if ("lemma" %in% input$clean_options) {
       # Charger le modèle UDPipe
-      ud_model <- udpipe_load_model("/Users/fabiengouez/Library/Mobile Documents/com~apple~CloudDocs/Downloads/french-gsd-ud-2.5-191206(1).udpipe")
+      ud_model <- udpipe_load_model("french-gsd-ud-2.5-191206.udpipe")
       
       # Fonction pour annoter et lemmatiser un document
       annotate_and_lemmatize <- function(text, ud_model) {
@@ -152,7 +135,7 @@ server <- function(input, output, session) {
       concordances_df <- data.frame(text = unlist(concordances_list))
       
       # Tableau interactif
-      output$ngramTable <- renderDT({
+      output$concordance <- renderDT({
         datatable(concordances_df)
       })
       
@@ -172,82 +155,76 @@ server <- function(input, output, session) {
     }  else if (input$analysis_type == "Co-occurrences") {
       req(cleaned_corpus_data())
       
-      # Créer une matrice terme-document
-      dtm <- dfm(tokens(cleaned_corpus_data()))
+      # Convert tokens to plain text
+      text_data <- sapply(cleaned_corpus_data(), function(tokens) paste(as.character(tokens), collapse = " "))
+      text_data_df <- data.frame(doc_id = 1:length(text_data), text = text_data, stringsAsFactors = FALSE)
       
-      # Calculer les co-occurrences avec le terme spécifié
-      term_fcm <- fcm(dtm)
+      # Annotate the cleaned corpus data
+      ud_model <- udpipe_load_model("french-gsd-ud-2.5-191206.udpipe")
+      annotations <- udpipe_annotate(ud_model, x = text_data_df$text)
+      annotations_df <- as.data.frame(annotations)
       
-      ## Vérifier si le terme spécifié est présent dans la matrice
-      if (!(input$myterm %in% colnames(term_fcm))) {
-        cooc_df <- data.frame(message = "No co-occurrences found for the specified term.")
-      } else {
-        # Extraire la colonne des co-occurrences pour le terme spécifié
-        cooc_vector <- as.vector(term_fcm[, input$myterm])
-        cooc_terms <- colnames(term_fcm)
-        
-        # Créer un DataFrame à partir du vecteur de co-occurrences
-        cooc_df <- data.frame(Term = cooc_terms, Cooccurrences = cooc_vector)
-        
-        # Filtrer les termes avec au moins une co-occurrence
-        cooc_df <- cooc_df[cooc_df$Cooccurrences > 5, ]
-        
-        # Vérifier si des co-occurrences ont été trouvées après filtrage
-        if (nrow(cooc_df) == 0) {
-          cooc_df <- data.frame(message = "No co-occurrences found for the specified term.")
-        } else {
-          # Trier le DataFrame par nombre de co-occurrences, décroissant
-          cooc_df <- cooc_df[order(cooc_df$Cooccurrences, decreasing = TRUE), ]
-        }
-      }
+      # Filter annotations based on parts of speech if needed
+      relevant_annotations <- annotations_df[annotations_df$upos %in% c("NOUN", "ADJ", "VERB"), ]
       
-      # Générer le titre et la légende du tableau
-      title <- paste("Co-occurrences de:", input$myterm)
-      # Générer le tableau et l'afficher
+      # Calculate co-occurrences
+      cooc_df <- cooccurrence(relevant_annotations, group = "doc_id", term = "lemma")
+      
+      # Filter for co-occurrences with the specified term
+      term_cooc <- subset(cooc_df, term1 == input$myterm | term2 == input$myterm)
+      term_cooc <- term_cooc[order(term_cooc$cooc, decreasing = TRUE), ]
+      
+      # Display co-occurrence table
       output$cooccurrenceTable <- renderUI({
-        x1 <- knitr::kable(cooc_df, caption = title, format = "html")
+        x1 <- knitr::kable(term_cooc, caption = paste("Co-occurrences de", input$myterm), format = "html")
         HTML(x1)
       })
       
-      # Cacher le tableau de concordance
-      output$ngramTable <- renderDT(NULL)
+      # Hide other outputs
+      output$concordance <- renderDT(NULL)
       output$ngramPlot <- renderPlotly(NULL)
     }
     else if (input$analysis_type == "Ngrams") {
       req(cleaned_corpus_data())
+      # Préparer les données textuelles pour l'annotation
+      text_data <- unlist(lapply(cleaned_corpus_data(), function(x) paste(x, collapse = " ")))
+      text_data_df <- data.frame(doc_id = 1:length(text_data), text = text_data, stringsAsFactors = FALSE)
       
-      # Obtenir les tokens à partir des données nettoyées
-      tokens_comb <- tokens(cleaned_corpus_data())
+      # Annoter les données du corpus nettoyé
+      ud_model <- udpipe_load_model("french-gsd-ud-2.5-191206.udpipe")
+      annotations <- udpipe_annotate(ud_model, x = text_data_df$text)
+      annotations_df <- as.data.frame(annotations)
       
-      # Calculer les collocations (ngrams) avec quanteda.textstats
-      collocations <- textstat_collocations(tokens_comb, size = 2:5)
+      # Calculer les collocations
+      collocations <- keywords_collocation(annotations_df, term = "lemma", group = c("doc_id", "sentence_id"), ngram_max = as.integer(input$n_maxi), n_min = as.integer(input$n_mini))
       
-      # Filtrer les collocations pour n'afficher que les plus fréquentes
-      collocations <- collocations[order(collocations$count, decreasing = TRUE), ]
+      # Filtrer et trier les collocations
+      top_collocations <- head(collocations[order(collocations$freq, decreasing = TRUE), ], 50)
       
-      # Limiter le nombre de collocations affichées (par exemple, les 20 premières)
-      top_collocations <- head(collocations, 50)
-      
-      p <- ggplot(top_collocations, aes(x = reorder(collocation, count), y = count)) +
-        geom_bar(stat = "identity", fill = "steelblue") +
-        coord_flip() +
-        labs(
-          title = "Top 20 Collocations (2-3 words)",
-          x = "Collocations",
-          y = "Frequency"
-        ) +
-        theme_minimal()
-      
-      # Convertir le graphique ggplot en un graphique interactif avec plotly et ajouter des annotations
-      output$ngramPlot <- renderPlotly({
-        ggplotly(p) 
+      # Afficher les collocations
+      output$ngramPlot <- renderPlot({
+        ggplot(top_collocations, aes(x = reorder(keyword, freq), y = freq)) +
+          geom_bar(stat = "identity", fill = "steelblue") +
+          coord_flip() +
+          labs(
+            title = paste("Top 50 Collocations", input$n_mini, "-", input$n_maxi),
+            x = "Collocations",
+            y = "Fréquence"
+          ) +
+          theme_minimal()
       })
-      # Cacher les autres tableaux
-      output$ngramTable <- renderDT(NULL)
+      
+      output$ngramTable <- renderTable({
+        top_collocations
+      })
+      
+      output$concordance <- renderTable(NULL)
       output$cooccurrenceTable <- renderUI(NULL)
     }
   })
 }
 
 shinyApp(ui, server)
-shinylive::export(appdir = "/Users/fabiengouez/Documents/GitHub/blog/shinylive", destdir = "docs")
+
+
+
