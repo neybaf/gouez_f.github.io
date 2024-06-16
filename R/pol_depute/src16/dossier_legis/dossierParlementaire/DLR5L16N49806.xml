@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N49806</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et le Gouvernement de la République d’Indonésie relatif à la coopération dans le domaine de la défense</titre>
+    <titreChemin>DLR5L16N49806</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/pjl23-545.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>6</code>
+    <libelle>Projet de ratification des traités et conventions</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA722190</acteurRef>
+        <mandatRef>PM833697</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-SN1-49806</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD219281DI</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2024-04-17T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PRJLSNR5S419B0545</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="ProcedureAccelere_Type">
+          <uid>L16-VD219283</uid>
+          <codeActe>SN1-PROCACC</codeActe>
+          <libelleActe>
+            <nomCanonique>Le gouvernement déclare l'urgence / engage la procédure accélérée</nomCanonique>
+            <libelleCourt>Le gouvernement déclare l'urgence / engage la procédure accélérée</libelleCourt>
+          </libelleActe>
+          <organeRef>PO833673</organeRef>
+          <dateActe>2024-04-17T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-COM-49806</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD219282CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO211491</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD219282CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe>2024-04-17T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2024IDS27618</uid>
+  <timeStampDebut>2023-10-09T16:00:00.000+02:00</timeStampDebut>
+  <timeStampFin>2023-10-09T20:25:00.000+02:00</timeStampFin>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2023-09-18T00:00:00.000+02:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2024O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS27618PT46444</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-09-18T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Projet de loi portant mesures d’urgence pour adapter les dispositions du code de commerce relatives aux négociations commerciales dans la grande distribution </objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N48681</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS27618PT46445</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-09-18T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Suite de la discussion du projet de loi, adopté par le Sénat, visant à sécuriser et réguler l’espace numérique</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N47884</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Suite de la discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef>CRSANR5L16S2024O1N010</compteRenduRef>
+  <identifiants>
+    <numSeanceJO>10</numSeanceJO>
+    <idJO>20240010</idJO>
+    <quantieme>Première</quantieme>
+    <DateSeance>2023-10-09+02:00</DateSeance>
+  </identifiants>
+</reunion>

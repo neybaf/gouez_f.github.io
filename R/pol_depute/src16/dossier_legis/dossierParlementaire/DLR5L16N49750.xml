@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N49750</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Constitutionnaliser la sécurité sociale</titre>
+    <titreChemin>proteger_securite_sociale2</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>7</code>
+    <libelle>Projet ou proposition de loi constitutionnelle</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA718926</acteurRef>
+        <mandatRef>PM796326</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN1-49750</uid>
+      <codeActe>AN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD219142DI</uid>
+          <codeActe>AN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2024-04-11T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PIONANR5L16B2472</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN1-COM-49750</uid>
+          <codeActe>AN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD219143CF</uid>
+              <codeActe>AN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO59051</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD219143CFS</uid>
+                  <codeActe>AN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-04-11T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L16-VD219574</uid>
+                  <codeActe>AN1-COM-FOND-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-05-07T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA718926</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L16-VD219538R34117</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-05-07T16:30:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L16S2024IDC452382</reunionRef>
+                  <odjRef>RUANR5L16S2024IDC452382PT34117</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L16-VD219538R34114</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-05-22T09:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L16S2024IDC452771</reunionRef>
+                  <odjRef>RUANR5L16S2024IDC452771PT34114</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L16-VD219538R34162</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-05-29T09:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L16S2024IDC452860</reunionRef>
+                  <odjRef>RUANR5L16S2024IDC452860PT34162</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L16-VD219730</uid>
+                  <codeActe>AN1-COM-FOND-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59051</organeRef>
+                  <dateActe>2024-05-22T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>RAPPANR5L16B2641</texteAssocie>
+                  <texteAdopte xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN1-DEBATS-49750</uid>
+          <codeActe>AN1-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L16-VD219964S47795</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2024-05-30T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L16S2024IDS28384</reunionRef>
+              <odjRef>RUANR5L16S2024IDS28384PT47795</odjRef>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L16-VD219964S47804</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2024-05-30T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L16S2024IDS28385</reunionRef>
+              <odjRef>RUANR5L16S2024IDS28385PT47804</odjRef>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="RetraitInitiative_Type">
+          <uid>L16-VD220000</uid>
+          <codeActe>AN1-RTRINI</codeActe>
+          <libelleActe>
+            <nomCanonique>Retrait d'une initiative</nomCanonique>
+            <libelleCourt>Retrait d'une initiative</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2024-05-31T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PIONANR5L16B2472</texteAssocie>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2023IDS26857</uid>
+  <timeStampDebut>2023-03-06T16:00:00.000+01:00</timeStampDebut>
+  <timeStampFin>2023-03-06T20:00:00.000+01:00</timeStampFin>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2023-02-06T00:00:00.000+01:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2023O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26857PT45212</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-02-06T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Discussion de la proposition de loi visant à garantir le respect du droit à l'image des enfants</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N47047</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26857PT45213</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-02-06T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Discussion de la proposition de loi relative à la prévention de l'exposition excessive des enfants aux écrans</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N47046</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef>CRSANR5L16S2023O1N166</compteRenduRef>
+  <identifiants>
+    <numSeanceJO>166</numSeanceJO>
+    <idJO>20230166</idJO>
+    <quantieme>Première</quantieme>
+    <DateSeance>2023-03-06+01:00</DateSeance>
+  </identifiants>
+</reunion>

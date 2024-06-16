@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2023IDS26682</uid>
+  <timeStampDebut>2023-01-11T15:00:00.000+01:00</timeStampDebut>
+  <timeStampFin>2023-01-11T19:00:00.000+01:00</timeStampFin>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2022-12-05T00:00:00.000+01:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2023O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26682PT44883</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2022-12-05T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Débat sur les aides publiques aux entreprises</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Débat d'initiative parlementaire</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26682PT44884</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2022-12-05T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Questions sur les oubliés du bouclier énergétique</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Débat d'initiative parlementaire</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef>CRSANR5L16S2023O1N111</compteRenduRef>
+  <identifiants>
+    <numSeanceJO>111</numSeanceJO>
+    <idJO>20230111</idJO>
+    <quantieme>Première</quantieme>
+    <DateSeance>2023-01-11+01:00</DateSeance>
+  </identifiants>
+</reunion>

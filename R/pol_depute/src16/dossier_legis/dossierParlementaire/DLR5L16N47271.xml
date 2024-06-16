@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N47271</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Accords entre la France et le Sénégal du 7 septembre 2021 et entre la France et le Sri Lanka du 23 février 2022</titre>
+    <titreChemin>DLR5L16N47271</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/pjl22-371.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>6</code>
+    <libelle>Projet de ratification des traités et conventions</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA717161</acteurRef>
+        <mandatRef>PM791583</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-SN1-47271</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD211889DI</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2023-02-22T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PRJLSNR5S399B0371</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="ProcedureAccelere_Type">
+          <uid>L16-VD211891</uid>
+          <codeActe>SN1-PROCACC</codeActe>
+          <libelleActe>
+            <nomCanonique>Le gouvernement déclare l'urgence / engage la procédure accélérée</nomCanonique>
+            <libelleCourt>Le gouvernement déclare l'urgence / engage la procédure accélérée</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791579</organeRef>
+          <dateActe>2023-02-22T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-COM-47271</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD211890CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO211491</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD211890CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe>2023-02-22T00:00:00.000+01:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L16-VD213322</uid>
+                  <codeActe>SN1-COM-FOND-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe xsi:nil="true"/>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA703536</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L16-VD213323</uid>
+                  <codeActe>SN1-COM-FOND-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe>2023-05-10T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>RAPPSNR5S399B0591</texteAssocie>
+                  <texteAdopte>PRJLSNR5S399BTC0592</texteAdopte>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-DEBATS-47271</uid>
+          <codeActe>SN1-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Decision_Type">
+              <uid>L16-VD213663DEC</uid>
+              <codeActe>SN1-DEBATS-DEC</codeActe>
+              <libelleActe>
+                <nomCanonique>Décision</nomCanonique>
+                <libelleCourt>Décision</libelleCourt>
+              </libelleActe>
+              <organeRef>PO78718</organeRef>
+              <dateActe>2023-05-24T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <statutConclusion>
+                <fam_code>TSORTF01</fam_code>
+                <libelle>adopté</libelle>
+              </statutConclusion>
+              <reunionRef xsi:nil="true"/>
+              <voteRefs xsi:nil="true"/>
+              <textesAssocies>
+                <texteAssocie>
+                  <typeTexte>BTA</typeTexte>
+                  <refTexteAssocie>PRJLSNR5S399BTA0115</refTexteAssocie>
+                </texteAssocie>
+              </textesAssocies>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN1-47271</uid>
+      <codeActe>AN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (2ème assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiativeNavette_Type">
+          <uid>L16-VD213672DIN</uid>
+          <codeActe>AN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt d'une initiative en navette</nomCanonique>
+            <libelleCourt>Dépôt d'une initiative en navette</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2023-05-25T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PRJLANR5L16B1276</texteAssocie>
+          <provenance>PO78718</provenance>
+          <depotInitialLectureDefinitiveRef xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="DepotAccordInternational_Type">
+          <uid>L16-VD213672ACIN</uid>
+          <codeActe>AN1-ACIN</codeActe>
+          <libelleActe>
+            <nomCanonique>Accord international</nomCanonique>
+            <libelleCourt>Accord international</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2023-05-25T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>ACINANR5L16B1276</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN1-COM-47271</uid>
+          <codeActe>AN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD213673CF</uid>
+              <codeActe>AN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO59047</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD213673CFS</uid>
+                  <codeActe>AN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2023-05-25T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L16-VD214053</uid>
+                  <codeActe>AN1-COM-FOND-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2023-06-13T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA1008</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L16-VD214050R32908</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2023-06-13T17:35:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L16S2023IDC448832</reunionRef>
+                  <odjRef>RUANR5L16S2023IDC448832PT32908</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L16-VD214646</uid>
+                  <codeActe>AN1-COM-FOND-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2023-07-05T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>RAPPANR5L16B1507</texteAssocie>
+                  <texteAdopte xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN1-DEBATS-47271</uid>
+          <codeActe>AN1-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L16-VD214337S46256</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2023-07-19T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L16S2023IDS27502</reunionRef>
+              <odjRef>RUANR5L16S2023IDS27502PT46256</odjRef>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="Decision_Type">
+              <uid>L16-VD214868DEC</uid>
+              <codeActe>AN1-DEBATS-DEC</codeActe>
+              <libelleActe>
+                <nomCanonique>Décision</nomCanonique>
+                <libelleCourt>Décision</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2023-07-19T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <statutConclusion>
+                <fam_code>TSORTF03</fam_code>
+                <libelle>adopté sans modification</libelle>
+              </statutConclusion>
+              <reunionRef>RUANR5L16S2023IDS27502</reunionRef>
+              <voteRefs>
+                <voteRef>VTANR5L16V2390</voteRef>
+              </voteRefs>
+              <textesAssocies>
+                <texteAssocie>
+                  <typeTexte>BTA</typeTexte>
+                  <refTexteAssocie>PRJLANR5L16BTA0161</refTexteAssocie>
+                </texteAssocie>
+              </textesAssocies>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-PROM-47271</uid>
+      <codeActe>PROM</codeActe>
+      <libelleActe>
+        <nomCanonique>Promulgation de la loi</nomCanonique>
+        <libelleCourt>Promulgation de la loi</libelleCourt>
+      </libelleActe>
+      <organeRef>PO717136</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="Promulgation_Type">
+          <uid>L16-VD215021PL</uid>
+          <codeActe>PROM-PUB</codeActe>
+          <libelleActe>
+            <nomCanonique>Promulgation d'une loi</nomCanonique>
+            <libelleCourt>Promulgation d'une loi</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717136</organeRef>
+          <dateActe>2023-07-23T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteLoiRef>PRJLANR5L16BTA0161</texteLoiRef>
+          <infoJO>
+            <typeJO>JO_LOI_DECRET</typeJO>
+            <dateJO>2023-07-25+02:00</dateJO>
+            <pageJO xsi:nil="true"/>
+            <numJO>170</numJO>
+            <urlLegifrance>http://www.legifrance.gouv.fr/WAspad/UnTexteDeJorf?numjo=EAEJ2229800L</urlLegifrance>
+            <referenceNOR>EAEJ2229800L</referenceNOR>
+          </infoJO>
+          <urlEcheancierLoi xsi:nil="true"/>
+          <codeLoi>2023-654</codeLoi>
+          <titreLoi>autorisant l’approbation de l’accord entre le Gouvernement de la République française et le Gouvernement de la République du Sénégal sur l’octroi de l’autorisation d’exercer une activité professionnelle aux personnes à charge des agents des missions officielles de chaque État dans l’autre , signé à Paris le 7 septembre 2021, et de l’accord entre le Gouvernement de la République française et le Gouvernement de la République démocratique socialiste de Sri Lanka relatif à l’autorisation d’exercice d’une activité professionnelle salariée par les membres de la famille des agents des missions officielles de chaque État dans l’autre, signé à Paris le 23 février 2022</titreLoi>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

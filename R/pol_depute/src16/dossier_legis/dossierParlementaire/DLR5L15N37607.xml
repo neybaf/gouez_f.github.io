@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L15N37607</uid>
+  <legislature>15</legislature>
+  <titreDossier>
+    <titre>Accord économique et commercial global (CETA) et accord de partenariat stratégique entre l'UE et le Canada</titre>
+    <titreChemin>aecg_partenariat_strategique_ue-canada</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/pjl18-694.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>6</code>
+    <libelle>Projet de ratification des traités et conventions</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA345619</acteurRef>
+        <mandatRef>PM725692</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA1872</acteurRef>
+        <mandatRef>PM730104</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L15-AN1-37607</uid>
+      <codeActe>AN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO717460</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L15-VD190099DI</uid>
+          <codeActe>AN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717460</organeRef>
+          <dateActe>2019-07-03T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PRJLANR5L15B2107</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="EtudeImpact_Type">
+          <uid>L15-VD190099ETI</uid>
+          <codeActe>AN1-ETI</codeActe>
+          <libelleActe>
+            <nomCanonique>Etude d'impact</nomCanonique>
+            <libelleCourt>Etude d'impact</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717460</organeRef>
+          <dateActe>2019-07-03T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <contributionInternaute>
+            <dateOuverture>2019-07-05+02:00</dateOuverture>
+            <dateFermeture>2019-07-17+02:00</dateFermeture>
+          </contributionInternaute>
+          <texteAssocie>ETDIANR5L15B2107</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="DepotAccordInternational_Type">
+          <uid>L15-VD190099ACIN</uid>
+          <codeActe>AN1-ACIN</codeActe>
+          <libelleActe>
+            <nomCanonique>Accord international</nomCanonique>
+            <libelleCourt>Accord international</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717460</organeRef>
+          <dateActe>2019-07-03T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>ACINANR5L15B2107</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="ProcedureAccelere_Type">
+          <uid>L15-VD190101</uid>
+          <codeActe>AN1-PROCACC</codeActe>
+          <libelleActe>
+            <nomCanonique>Le gouvernement déclare l'urgence / engage la procédure accélérée</nomCanonique>
+            <libelleCourt>Le gouvernement déclare l'urgence / engage la procédure accélérée</libelleCourt>
+          </libelleActe>
+          <organeRef>PO725688</organeRef>
+          <dateActe>2019-07-03T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L15-AN1-COM-37607</uid>
+          <codeActe>AN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717460</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L15-VD190100CF</uid>
+              <codeActe>AN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO59047</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L15-VD190100CFS</uid>
+                  <codeActe>AN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2019-07-03T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L15-VD190108</uid>
+                  <codeActe>AN1-COM-FOND-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2019-06-19T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA722178</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L15-VD190110R26717</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2019-06-19T17:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L15S2019IDC433125</reunionRef>
+                  <odjRef>RUANR5L15S2019IDC433125PT26717</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L15-VD190110R26718</uid>
+                  <codeActe>AN1-COM-FOND-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2019-07-09T17:05:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L15S2019IDC433292</reunionRef>
+                  <odjRef>RUANR5L15S2019IDC433292PT26718</odjRef>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L15-VD190221</uid>
+                  <codeActe>AN1-COM-FOND-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO59047</organeRef>
+                  <dateActe>2019-07-10T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>RAPPANR5L15B2124</texteAssocie>
+                  <texteAdopte>PRJLANR5L15BTC2124</texteAdopte>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L15-VD190157CA</uid>
+              <codeActe>AN1-COM-AVIS</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux d'une commission saisie pour avis</nomCanonique>
+                <libelleCourt>Travaux d'une commission saisie pour avis</libelleCourt>
+              </libelleActe>
+              <organeRef>PO419610</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComAvis_Type">
+                  <uid>L15-VD190157CAS</uid>
+                  <codeActe>AN1-COM-AVIS-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Saisine pour avis d'une commission</nomCanonique>
+                    <libelleCourt>Saisine pour avis d'une commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO419610</organeRef>
+                  <dateActe>2019-07-05T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L15-VD190206</uid>
+                  <codeActe>AN1-COM-AVIS-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO419610</organeRef>
+                  <dateActe>2019-06-26T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA721852</acteurRef>
+                      <typeRapporteur>rapporteur pour avis</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L15-VD190217</uid>
+                  <codeActe>AN1-COM-AVIS-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO419610</organeRef>
+                  <dateActe>2019-07-09T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>AVISANR5L15B2123</texteAssocie>
+                  <texteAdopte xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L15-AN1-DEBATS-37607</uid>
+          <codeActe>AN1-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO717460</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L15-VD190200S37484</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO717460</organeRef>
+              <dateActe>2019-07-17T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L15S2019IDS21767</reunionRef>
+              <odjRef>RUANR5L15S2019IDS21767PT37484</odjRef>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L15-VD190200S37490</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO717460</organeRef>
+              <dateActe>2019-07-17T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L15S2019IDS21768</reunionRef>
+              <odjRef>RUANR5L15S2019IDS21768PT37490</odjRef>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L15-VD190200S37603</uid>
+              <codeActe>AN1-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO717460</organeRef>
+              <dateActe>2019-07-23T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L15S2019IDS21785</reunionRef>
+              <odjRef>RUANR5L15S2019IDS21785PT37603</odjRef>
+            </acteLegislatif>
+            <acteLegislatif xsi:type="Decision_Type">
+              <uid>L15-VD190449DEC</uid>
+              <codeActe>AN1-DEBATS-DEC</codeActe>
+              <libelleActe>
+                <nomCanonique>Décision</nomCanonique>
+                <libelleCourt>Décision</libelleCourt>
+              </libelleActe>
+              <organeRef>PO717460</organeRef>
+              <dateActe>2019-07-23T00:00:00.000+02:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <statutConclusion>
+                <fam_code>TSORTF01</fam_code>
+                <libelle>adopté</libelle>
+              </statutConclusion>
+              <reunionRef>RUANR5L15S2019IDS21785</reunionRef>
+              <voteRefs>
+                <voteRef>VTANR5L15V2059</voteRef>
+              </voteRefs>
+              <textesAssocies>
+                <texteAssocie>
+                  <typeTexte>BTA</typeTexte>
+                  <refTexteAssocie>PRJLANR5L15BTA0324</refTexteAssocie>
+                </texteAssocie>
+              </textesAssocies>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L15-SN1-37607</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (2ème assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiativeNavette_Type">
+          <uid>L15-VD190555DIN</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt d'une initiative en navette</nomCanonique>
+            <libelleCourt>Dépôt d'une initiative en navette</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2019-07-23T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PRJLSNR5S319B0694</texteAssocie>
+          <provenance>PO717460</provenance>
+          <depotInitialLectureDefinitiveRef xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L15-SN1-COM-37607</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L15-VD190556CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO211491</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L15-VD190556CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe>2019-07-23T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L15-VD218498</uid>
+                  <codeActe>SN1-COM-FOND-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe xsi:nil="true"/>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA703540</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DepotRapport_Type">
+                  <uid>L15-VD218499</uid>
+                  <codeActe>SN1-COM-FOND-RAPPORT</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Dépôt de rapport</nomCanonique>
+                    <libelleCourt>Dépôt de rapport</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211491</organeRef>
+                  <dateActe>2024-03-13T00:00:00.000+01:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <texteAssocie>RAPPSNR5S419B0424</texteAssocie>
+                  <texteAdopte>PRJLSNR5S419BTC0425</texteAdopte>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-DEBATS-37607</uid>
+          <codeActe>SN1-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Decision_Type">
+              <uid>L16-VD218712DEC</uid>
+              <codeActe>SN1-DEBATS-DEC</codeActe>
+              <libelleActe>
+                <nomCanonique>Décision</nomCanonique>
+                <libelleCourt>Décision</libelleCourt>
+              </libelleActe>
+              <organeRef>PO78718</organeRef>
+              <dateActe>2024-03-21T00:00:00.000+01:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <statutConclusion>
+                <fam_code>TSORTF05</fam_code>
+                <libelle>modifié</libelle>
+              </statutConclusion>
+              <reunionRef xsi:nil="true"/>
+              <voteRefs xsi:nil="true"/>
+              <textesAssocies>
+                <texteAssocie>
+                  <typeTexte>BTA</typeTexte>
+                  <refTexteAssocie>PRJLSNR5S419BTA0095</refTexteAssocie>
+                </texteAssocie>
+              </textesAssocies>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

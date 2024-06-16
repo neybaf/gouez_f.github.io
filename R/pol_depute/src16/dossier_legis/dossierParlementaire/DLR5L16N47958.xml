@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N47958</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Proposition de résolution visant à lutter contre l'impunité des auteurs de violences sexuelles sur personnes mineures</titre>
+    <titreChemin>DLR5L16N47958</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/ppl22-625.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>2</code>
+    <libelle>Proposition de loi ordinaire</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA736233</acteurRef>
+        <mandatRef>PM736411</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA303995</acteurRef>
+        <mandatRef>PM775745</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA415499</acteurRef>
+        <mandatRef>PM775655</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA736179</acteurRef>
+        <mandatRef>PM736420</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA703506</acteurRef>
+        <mandatRef>PM777126</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA703506</acteurRef>
+        <mandatRef>PM777126</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA736215</acteurRef>
+        <mandatRef>PM736324</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775278</acteurRef>
+        <mandatRef>PM775564</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775266</acteurRef>
+        <mandatRef>PM775568</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA266812</acteurRef>
+        <mandatRef>PM736265</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA719408</acteurRef>
+        <mandatRef>PM775520</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775234</acteurRef>
+        <mandatRef>PM775536</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA760322</acteurRef>
+        <mandatRef>PM775649</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA736189</acteurRef>
+        <mandatRef>PM736363</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA341381</acteurRef>
+        <mandatRef>PM775747</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775300</acteurRef>
+        <mandatRef>PM775600</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA267512</acteurRef>
+        <mandatRef>PM775817</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA736235</acteurRef>
+        <mandatRef>PM775795</mandatRef>
+      </acteur>
+    </acteurs>
+    <organes>
+      <organe>
+        <organeRef>
+          <uid>PO78718</uid>
+        </organeRef>
+      </organe>
+    </organes>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-SN1-47958</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD213531DI</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2023-05-19T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PIONSNR5S399B0625</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-COM-47958</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD213532CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO211495</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD213532CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211495</organeRef>
+                  <dateActe>2023-05-19T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

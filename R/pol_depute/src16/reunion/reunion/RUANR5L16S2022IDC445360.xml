@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2022IDC445360</uid>
+  <timeStampDebut>2022-07-22T09:30:00.000+02:00</timeStampDebut>
+  <lieu>
+    <lieuRef>SLANPBSBUR06</lieuRef>
+    <libelleLong>6ème Bureau – Palais Bourbon, 1er étage</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Annulé</etat>
+    <chrono>
+      <creation>2022-07-13T00:00:00.000+02:00</creation>
+      <cloture>2022-07-21T00:00:00.000+02:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO59051</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Sous réserve des travaux du Sénat, en cas d’échec de la commission mixte paritaire, examen en nouvelle lecture du projet de loi maintenant provisoirement un dispositif de veille et de sécurité sanitaire en matière de lutte contre la covid-19 (Mme Caroline Abadie, rapporteure).</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>sous réserve des travaux du Sénat, en cas d’échec de la commission mixte paritaire, examen en nouvelle lecture du projet de loi maintenant provisoirement un dispositif de veille et de sécurité sanitaire en matière de lutte contre la covid-19 (Mme Caroline Abadie, rapporteure).</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2022IDC445360PT31317</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2022-07-13T00:00:00.000+02:00</creation>
+            <cloture>2022-07-21T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen nouvelle lecture</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

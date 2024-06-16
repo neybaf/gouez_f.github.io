@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierResolutionAN">
+  <uid>DLR5L16N46208</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Proposition de résolution affirmant le soutien de l'Assemblée nationale à l'Ukraine et condamnant la guerre menée par la Fédération de Russie</titre>
+    <titreChemin>soutienAssembleeUkraine</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>22</code>
+    <libelle>Résolution Article 34-1</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA721158</acteurRef>
+        <mandatRef>PM797460</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-ANLUNI-46208</uid>
+      <codeActe>ANLUNI</codeActe>
+      <libelleActe>
+        <nomCanonique>Lecture unique</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD208952DI</uid>
+          <codeActe>ANLUNI-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2022-08-25T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PNREANR5L16B0215</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="RetraitInitiative_Type">
+          <uid>L16-VD209742</uid>
+          <codeActe>ANLUNI-RTRINI</codeActe>
+          <libelleActe>
+            <nomCanonique>Retrait d'une initiative</nomCanonique>
+            <libelleCourt>Retrait d'une initiative</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2022-10-26T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PNREANR5L16B0215</texteAssocie>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

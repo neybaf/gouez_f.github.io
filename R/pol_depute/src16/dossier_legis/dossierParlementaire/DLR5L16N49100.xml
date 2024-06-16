@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierMissionControle_Type">
+  <uid>DLR5L16N49100</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>L'activité de l'Assemblée nationale à l'Assemblée parlementaire du Conseil de l'Europe au cours de la quatrième partie de sa session ordinaire de 2023</titre>
+    <titreChemin>acpe_conseil_europe_t4_2023</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>19</code>
+    <libelle>Rapport d'information sans mission</libelle>
+  </procedureParlementaire>
+  <initiateur/>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN20-49100</uid>
+      <codeActe>AN20</codeActe>
+      <libelleActe>
+        <nomCanonique>Travaux</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotRapport_Type">
+          <uid>L16-VD217011</uid>
+          <codeActe>AN20-RAPPORT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt de rapport</nomCanonique>
+            <libelleCourt>Dépôt de rapport</libelleCourt>
+          </libelleActe>
+          <organeRef>PO304272</organeRef>
+          <dateActe>2023-12-14T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>RINFANR5L16B1995</texteAssocie>
+          <texteAdopte xsi:nil="true"/>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

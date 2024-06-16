@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2023IDC447675</uid>
+  <timeStampDebut>2023-03-23T08:30:00.000+01:00</timeStampDebut>
+  <lieu>
+    <lieuRef xsi:nil="true"/>
+    <libelleLong>Visioconférence sans salle</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2023-03-20T00:00:00.000+01:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO805332</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>true</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>false</ouverturePresse>
+  <captationVideo>false</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Table ronde n° 8 : « L’orientation des collégiens et lycéens : où en est on aujourd’hui ? » – volet conseils régionaux, en présence de :&#13;- M. François Bonneau, président du conseil régional de Centre-Val de Loire, vice président de Régions de France, président de la commission Éducation, orientation, formation et emploi ;&#13;- M. Bruno Genzana, président de la commission Jeunesse, vie étudiante et lien intergénérationnel, deuxième vice-président de la commission Lycées et orientation du conseil régional de Provence-Alpes-Côte d’Azur ;&#13;- M. Jean-Louis Nembrini, vice-président du conseil régional de Nouvelle-Aquitaine, en charge de l’orientation, de l’éducation et de la jeunesse.</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>table ronde n° 8 : « L’orientation des collégiens et lycéens : où en est on aujourd’hui ? » – volet conseils régionaux, en présence de :</item>
+      <item>M. François Bonneau, président du conseil régional de Centre-Val de Loire, vice président de Régions de France, président de la commission Éducation, orientation, formation et emploi ;</item>
+      <item>M. Bruno Genzana, président de la commission Jeunesse, vie étudiante et lien intergénérationnel, deuxième vice-président de la commission Lycées et orientation du conseil régional de Provence-Alpes-Côte d’Azur ;</item>
+      <item>M. Jean-Louis Nembrini, vice-président du conseil régional de Nouvelle-Aquitaine, en charge de l’orientation, de l’éducation et de la jeunesse.</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2023IDC447675PT32335</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-03-20T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N45915</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

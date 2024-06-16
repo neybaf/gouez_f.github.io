@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2023IDS27025</uid>
+  <timeStampDebut>2023-05-05T09:00:00.000+02:00</timeStampDebut>
+  <timeStampFin>2023-05-05T12:50:00.000+02:00</timeStampFin>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2023-03-27T00:00:00.000+02:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2023O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS27025PT45562</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-03-27T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Débat sur le thème : « La crise de l’hôpital public »</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Débat d'initiative parlementaire</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS27025PT45563</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2023-03-27T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Débat sur le thème : "Quelles réponses à l'envolée des prix des produits de grande consommation ?" (salle Lamartine)</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Débat d'initiative parlementaire</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef>CRSANR5L16S2023O1N225</compteRenduRef>
+  <identifiants>
+    <numSeanceJO>225</numSeanceJO>
+    <idJO>20230225</idJO>
+    <quantieme>Première</quantieme>
+    <DateSeance>2023-05-05+02:00</DateSeance>
+  </identifiants>
+</reunion>

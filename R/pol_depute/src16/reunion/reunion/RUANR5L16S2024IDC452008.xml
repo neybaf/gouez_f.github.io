@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2024IDC452008</uid>
+  <timeStampDebut>2024-04-10T08:30:00.000+02:00</timeStampDebut>
+  <lieu>
+    <lieuRef xsi:nil="true"/>
+    <libelleLong>Salon Gabriel, 101 rue de l’Université</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2024-03-13T00:00:00.000+01:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO808071</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>false</ouverturePresse>
+  <captationVideo>false</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Audition, sous forme de petit déjeuner, de Mme Daysheelyn Anne Brillo, avocate et professeure philippine, lauréate de la promotion 2024 de l’Initiative Marianne pour les défenseurs des droits de l’Homme</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>Audition, sous forme de petit déjeuner, de Mme Daysheelyn Anne Brillo, avocate et professeure philippine, lauréate de la promotion 2024 de l’Initiative Marianne pour les défenseurs des droits de l’Homme</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2024IDC452008PT33902</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2024-03-13T00:00:00.000+01:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N49130</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>true</estReunionInternationale>
+    <listePays>
+      <paysRef>GOP756456</paysRef>
+    </listePays>
+  </infosReunionsInternationale>
+</reunion>

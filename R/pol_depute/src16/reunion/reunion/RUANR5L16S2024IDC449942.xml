@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2024IDC449942</uid>
+  <timeStampDebut>2023-10-26T09:30:00.000+02:00</timeStampDebut>
+  <lieu>
+    <lieuRef>SLANPBS6242</lieuRef>
+    <libelleLong>Salle 6242 – Palais Bourbon, 2ème sous-sol</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Annulé</etat>
+    <chrono>
+      <creation>2023-09-28T00:00:00.000+02:00</creation>
+      <cloture>2023-10-05T00:00:00.000+02:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO419604</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Projet de loi de finances pour 2024 (n° 1680 – seconde partie) :</item>
+      <item>- Audition de Mme Sylvie Retailleau, ministre de l’Enseignement supérieur et de la recherche</item>
+      <item>- Examen pour avis des crédits de la mission Recherche et enseignement supérieur </item>
+      <item>- Enseignement supérieur (M. Hendrik Davi, rapporteur pour avis)</item>
+      <item>- Recherche (M. Philippe Berta, rapporteur pour avis)</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>projet de loi de finances pour 2024 (n° 1680 – seconde partie) :</item>
+      <item>audition de Mme Sylvie Retailleau, ministre de l’Enseignement supérieur et de la recherche ;</item>
+      <item>examen pour avis des crédits de la mission Recherche et enseignement supérieur ;</item>
+      <item>enseignement supérieur (M. Hendrik Davi, rapporteur pour avis) ;</item>
+      <item>recherche (M. Philippe Berta, rapporteur pour avis).</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2024IDC449942PT33202</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2023-09-28T00:00:00.000+02:00</creation>
+            <cloture>2023-10-05T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

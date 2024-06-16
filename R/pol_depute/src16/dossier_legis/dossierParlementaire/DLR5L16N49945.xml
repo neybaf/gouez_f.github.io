@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierResolutionAN">
+  <uid>DLR5L16N49945</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Transposer dans le droit français la criminalisation de la gestation pour autrui votée par le Parlement européen dans le cadre de la révision de la directive sur la lutte contre la traite des êtres humains</titre>
+    <titreChemin>transposer_criminalisation_gpa_directive_europeenne</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>22</code>
+    <libelle>Résolution Article 34-1</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA720386</acteurRef>
+        <mandatRef>PM796908</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-ANLUNI-49945</uid>
+      <codeActe>ANLUNI</codeActe>
+      <libelleActe>
+        <nomCanonique>Lecture unique</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD219594DI</uid>
+          <codeActe>ANLUNI-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2024-05-10T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PNREANR5L16B2612</texteAssocie>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

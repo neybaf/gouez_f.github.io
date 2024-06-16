@@ -1,0 +1,217 @@
+---
+title: "analyse_deputes"
+author: "Fabien Gouez"
+date: "`r Sys.Date()`"
+toc: true
+output:
+  html_document:
+    df_print: paged
+    theme: cosmo
+    highlight: tango
+runtime: shiny
+---
+```{r setup, include=FALSE}
+library(xml2)
+library(dplyr)
+library(tidyr)
+library(FactoMineR)
+library(ggplot2)
+library(factoextra)
+library(kableExtra)
+library(shiny)
+library(DT)
+library(shinycssloaders)
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+```{r UI}
+shinyUI(fluidPage(
+  titlePanel("Analyse des votes des députés"),
+  sidebarLayout(
+    sidebarPanel(
+      textInput("acteurRef_specifique", "Référence de l'acteur:", value = "PA721024"),
+      actionButton("refresh", "Rafraîchir"),
+      downloadButton("downloadData1", "Télécharger votes"),
+      downloadButton("downloadData2", "Télécharger votes_filtered"),
+      downloadButton("downloadData3", "Télécharger votes_wide")
+    ),
+    mainPanel(
+      h3("Vos données"),
+      withSpinner(DTOutput("table")),
+      withSpinner(plotOutput("plot"))
+    )
+  )
+))
+```
+
+
+
+```{r}
+shinyServer(function(input, output, session) {
+  # Fonction pour extraire les votes d'un fichier XML
+  extract_votes <- function(file) {
+    xml_data <- read_xml(file)
+    ns <- xml_ns(xml_data)
+    dateScrutin <- xml_text(xml_find_first(xml_data, ".//d1:dateScrutin", ns))
+    libelle <- xml_text(xml_find_first(xml_data, ".//d1:titre", ns))
+    votes <- data.frame(dateScrutin = character(), libelle = character(), acteurRef = character(), vote = character(), parDelegation = character(), stringsAsFactors = FALSE)
+    
+    groupes <- xml_find_all(xml_data, ".//d1:groupe", ns)
+    
+    for (groupe in groupes) {
+      # Pour votes
+      pour_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:pours/d1:votant", ns)
+      if (length(pour_votants) > 0) {
+        pour_votants_df <- data.frame(
+          dateScrutin = rep(dateScrutin, length(pour_votants)),
+          libelle = rep(libelle, length(pour_votants)),
+          acteurRef = xml_text(xml_find_all(pour_votants, ".//d1:acteurRef", ns)),
+          vote = rep("Pour", length(pour_votants)),
+          parDelegation = xml_text(xml_find_all(pour_votants, ".//d1:parDelegation", ns)),
+          stringsAsFactors = FALSE
+        )
+        votes <- rbind(votes, pour_votants_df)
+      }
+      
+      # Contre votes
+      contre_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:contres/d1:votant", ns)
+      if (length(contre_votants) > 0) {
+        contre_votants_df <- data.frame(
+          dateScrutin = rep(dateScrutin, length(contre_votants)),
+          libelle = rep(libelle, length(contre_votants)),
+          acteurRef = xml_text(xml_find_all(contre_votants, ".//d1:acteurRef", ns)),
+          vote = rep("Contre", length(contre_votants)),
+          parDelegation = xml_text(xml_find_all(contre_votants, ".//d1:parDelegation", ns)),
+          stringsAsFactors = FALSE
+        )
+        votes <- rbind(votes, contre_votants_df)
+      }
+      
+      # Abstention votes
+      abstention_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:abstentions/d1:votant", ns)
+      if (length(abstention_votants) > 0) {
+        abstention_votants_df <- data.frame(
+          dateScrutin = rep(dateScrutin, length(abstention_votants)),
+          libelle = rep(libelle, length(abstention_votants)),
+          acteurRef = xml_text(xml_find_all(abstention_votants, ".//d1:acteurRef", ns)),
+          vote = rep("Abstention", length(abstention_votants)),
+          parDelegation = xml_text(xml_find_all(abstention_votants, ".//d1:parDelegation", ns)),
+          stringsAsFactors = FALSE
+        )
+        votes <- rbind(votes, abstention_votants_df)
+      }
+      
+      # Non votants
+      non_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:nonVotants/d1:votant", ns)
+      if (length(non_votants) > 0) {
+        non_votants_df <- data.frame(
+          dateScrutin = rep(dateScrutin, length(non_votants)),
+          libelle = rep(libelle, length(non_votants)),
+          acteurRef = xml_text(xml_find_all(non_votants, ".//d1:acteurRef", ns)),
+          vote = rep("Non Votant", length(non_votants)),
+          parDelegation = xml_text(xml_find_all(non_votants, ".//d1:parDelegation", ns)),
+          stringsAsFactors = FALSE
+        )
+        votes <- rbind(votes, non_votants_df)
+      }
+    }
+    
+    return(votes)
+  }
+  
+  refreshData <- reactive({
+    input$refresh
+    
+    # Lister tous les fichiers XML dans le répertoire
+    xml_dir <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/votes/"
+    xml_files <- list.files(path = xml_dir, pattern = "*.xml", full.names = TRUE)
+    
+    # Appliquer la fonction à chaque fichier XML et combiner les résultats en un seul data frame
+    votes_list <- lapply(xml_files, function(file) {
+      tryCatch({
+        extract_votes(file)
+      }, error = function(e) {
+        message(paste("Erreur dans le fichier :", file))
+        message(e)
+        return(data.frame(dateScrutin = character(), libelle = character(), acteurRef = character(), vote = character(), parDelegation = character(), stringsAsFactors = FALSE))
+      })
+    })
+    votes <- do.call(rbind, votes_list)
+    
+    # Charger les données des députés (depute_clean)
+    depute_clean <- read.csv("/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/depute_clean.csv") # Assurez-vous que le chemin est correct
+    
+    # Filtrer les données pour l'acteur spécifié
+    votes_filtered <- votes %>% filter(acteurRef == input$acteurRef_specifique)
+    
+    # Créer un data frame large pour l'analyse
+    votes_wide <- votes %>%
+      pivot_wider(names_from = libelle, values_from = vote, values_fill = list(vote = "Absent")) %>%
+      left_join(depute_clean %>% select(acteurRef, GP_uid, couleur_Associe), by = "acteurRef")
+    
+    # Convertir les votes en facteurs
+    votes_wide <- votes_wide %>%
+      mutate(across(-acteurRef, as.factor))
+    
+    return(list(votes = votes, votes_filtered = votes_filtered, votes_wide = votes_wide))
+  })
+  
+  data <- refreshData()
+  
+  # Affichage des données dans un tableau
+  output$table <- renderDT({
+    datatable(data()$votes_filtered)
+  })
+  
+  # Fonction de téléchargement pour votes
+  output$downloadData1 <- downloadHandler(
+    filename = function() {
+      paste("votes-", Sys.Date(), ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(data()$votes, file, row.names = FALSE)
+    }
+  )
+  
+  # Fonction de téléchargement pour votes_filtered
+  output$downloadData2 <- downloadHandler(
+    filename = function() {
+      paste("votes_filtered-", Sys.Date(), ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(data()$votes_filtered, file, row.names = FALSE)
+    }
+  )
+  
+  # Fonction de téléchargement pour votes_wide
+  output$downloadData3 <- downloadHandler(
+    filename = function() {
+      paste("votes_wide-", Sys.Date(), ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(data()$votes_wide, file, row.names = FALSE)
+    }
+  )
+  
+  output$plot <- renderPlot({
+    votes_acteur2 <- data()$votes_filtered %>%
+      rowwise() %>%
+      mutate(
+        noms_trouves = list(depute_clean$nom[str_detect(libelle, depute_clean$nom)]),
+        couleurs_associees = list(depute_clean$couleur_Associe[depute_clean$nom %in% noms_trouves]),
+        couleur_finale = combine_colors(couleurs_associees)
+      ) %>%
+      ungroup()
+    votes_acteur2$dateScrutin <- as.Date(votes_acteur2$dateScrutin)
+votes_acteur2_filtered <- votes_acteur2 %>% filter(!is.na(couleur_finale))
+ggplot(votes_acteur2_filtered, aes(x = dateScrutin, y = vote, color = couleur_finale)) +
+  geom_point(size = 3) +
+  labs(title = paste("Votes de", input$acteurRef_specifique, "en fonction des titres"), x = "Date du Scrutin", y = "Vote") +
+  scale_color_manual(name = "Tendances politiques", values = c("Gauche" = "red", "Majorité" = "darkorange", "Républicains" = "darkblue", "RN" = "black", "NI" = "grey", "LIOT" = "yellow")) +
+  theme_minimal()
+})
+})
+```

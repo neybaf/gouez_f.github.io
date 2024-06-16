@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N47475</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Proposition de loi visant à renforcer la lutte contre le harcèlement scolaire et le cyberharcèlement et modifiant la loi du 2 mars 2022</titre>
+    <titreChemin>DLR5L16N47475</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/ppl22-480.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>2</code>
+    <libelle>Proposition de loi ordinaire</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA736162</acteurRef>
+        <mandatRef>PM736320</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA703511</acteurRef>
+        <mandatRef>PM775685</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA429855</acteurRef>
+        <mandatRef>PM736425</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA304002</acteurRef>
+        <mandatRef>PM736326</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA785855</acteurRef>
+        <mandatRef>PM785869</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA415449</acteurRef>
+        <mandatRef>PM775793</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA429888</acteurRef>
+        <mandatRef>PM736379</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA703512</acteurRef>
+        <mandatRef>PM775665</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775290</acteurRef>
+        <mandatRef>PM775576</mandatRef>
+      </acteur>
+    </acteurs>
+    <organes>
+      <organe>
+        <organeRef>
+          <uid>PO78718</uid>
+        </organeRef>
+      </organe>
+    </organes>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-SN1-47475</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD212467DI</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2023-03-29T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PIONSNR5S399B0480</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-COM-47475</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD212468CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO211490</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD212468CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO211490</organeRef>
+                  <dateActe>2023-03-29T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

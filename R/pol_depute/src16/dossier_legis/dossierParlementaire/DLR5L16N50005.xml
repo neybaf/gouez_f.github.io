@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierResolutionAN">
+  <uid>DLR5L16N50005</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Lutter contre les addictions numériques chez les enfants</titre>
+    <titreChemin>lutter_addictions_numeriques_enfants</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>8</code>
+    <libelle>Résolution</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA335054</acteurRef>
+        <mandatRef>PM797298</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-ANLUNI-50005</uid>
+      <codeActe>ANLUNI</codeActe>
+      <libelleActe>
+        <nomCanonique>Lecture unique</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD219786DI</uid>
+          <codeActe>ANLUNI-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2024-05-23T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PNREANR5L16B2655</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-ANLUNI-COM-50005</uid>
+          <codeActe>ANLUNI-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD219787RP</uid>
+              <codeActe>ANLUNI-COM-CAE</codeActe>
+              <libelleActe>
+                <nomCanonique>Renvoi préalable à la CAE</nomCanonique>
+                <libelleCourt>Renvoi préalable à la CAE</libelleCourt>
+              </libelleActe>
+              <organeRef>PO415287</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="RenvoiPrealable_Type">
+                  <uid>L16-VD219787RPS</uid>
+                  <codeActe>ANLUNI-COM-CAE-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi préalable</nomCanonique>
+                    <libelleCourt>Renvoi préalable</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO415287</organeRef>
+                  <dateActe>2024-05-23T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="NominRapporteurs_Type">
+                  <uid>L16-VD220064</uid>
+                  <codeActe>ANLUNI-COM-CAE-NOMIN</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Nomination de rapporteur</nomCanonique>
+                    <libelleCourt>Nomination de rapporteur</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO415287</organeRef>
+                  <dateActe>2024-06-05T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <rapporteurs>
+                    <rapporteur>
+                      <acteurRef>PA335054</acteurRef>
+                      <typeRapporteur>rapporteur</typeRapporteur>
+                    </rapporteur>
+                  </rapporteurs>
+                  <reunion xsi:nil="true"/>
+                </acteLegislatif>
+                <acteLegislatif xsi:type="DiscussionCommission_Type">
+                  <uid>L16-VD220021R34235</uid>
+                  <codeActe>ANLUNI-COM-CAE-REUNION</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Réunion de commission</nomCanonique>
+                    <libelleCourt>Réunion de commission</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO415287</organeRef>
+                  <dateActe>2024-06-05T15:20:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                  <reunionRef>RUANR5L16S2024IDC452897</reunionRef>
+                  <odjRef>RUANR5L16S2024IDC452897PT34235</odjRef>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

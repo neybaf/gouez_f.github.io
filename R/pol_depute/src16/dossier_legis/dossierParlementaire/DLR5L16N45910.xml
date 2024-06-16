@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierResolutionAN">
+  <uid>DLR5L16N45910</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Allocution de la Présidente de l'Assemblée nationale</titre>
+    <titreChemin>allocution_prsdt_an</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>20</code>
+    <libelle>Allocution du Président de l'Assemblée nationale</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA721908</acteurRef>
+        <mandatRef>PM797568</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN21-45910</uid>
+      <codeActe>AN21</codeActe>
+      <libelleActe>
+        <nomCanonique>Débat</nomCanonique>
+        <libelleCourt>Débat</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotRapport_Type">
+          <uid>L16-VD208019</uid>
+          <codeActe>AN21-APAN</codeActe>
+          <libelleActe>
+            <nomCanonique>Allocution du Président de l'Assemblée nationale</nomCanonique>
+            <libelleCourt>Allocution du Président de l'Assemblée nationale</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2022-06-28T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>ALCNANR5L16B0002</texteAssocie>
+          <texteAdopte xsi:nil="true"/>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

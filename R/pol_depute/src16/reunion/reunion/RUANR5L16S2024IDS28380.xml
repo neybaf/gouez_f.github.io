@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2024IDS28380</uid>
+  <timeStampDebut>2024-05-28T15:00:00.000+02:00</timeStampDebut>
+  <timeStampFin>2024-05-28T20:00:00.000+02:00</timeStampFin>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2024-05-03T00:00:00.000+02:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2024O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS28380PT47784</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2024-05-03T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Questions au Gouvernement</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Questions au Gouvernement</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS28380PT47815</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2024-05-07T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Vote solennel sur le projet de loi d'orientation pour la souveraineté en matière agricole et le renouvellement des générations en agriculture</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N49726</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Vote solennel</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS28380PT47923</uid>
+        <cycleDeVie>
+          <etat>Supprimé</etat>
+          <chrono>
+            <creation>2024-05-21T00:00:00.000+02:00</creation>
+            <cloture>2024-05-23T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Vote solennel sur la proposition de loi, adoptée par le Sénat, relative à la réforme de l’audiovisuel public et à la souveraineté audiovisuelle</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Vote solennel</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2024IDS28380PT47775</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2024-05-03T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Suite de la discussion du projet de loi relatif à l'accompagnement des malades et de la fin de vie</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N49744</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Suite de la discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef>CRSANR5L16S2024O1N214</compteRenduRef>
+  <identifiants>
+    <numSeanceJO>214</numSeanceJO>
+    <idJO>20240214</idJO>
+    <quantieme>Deuxième</quantieme>
+    <DateSeance>2024-05-28+02:00</DateSeance>
+  </identifiants>
+</reunion>

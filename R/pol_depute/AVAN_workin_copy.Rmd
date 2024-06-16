@@ -1,0 +1,930 @@
+---
+title: "Analyse de participation à l'assemblée d'un député"
+output:
+  html_document:
+    css: /Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/style.css
+    df_print: paged
+    highlight: tango
+    theme: cosmo
+    toc: true
+    toc_float:
+      collapsed: true
+    toc_depth: 3
+    includes:
+      in_header: /Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/header.html
+---
+<!-- Toc Image -->
+<div class="toc-image-container">
+  <img src="/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/Logo_FrontPopulaire_2024.svg.png" class="toc-image" alt="TOC Image">
+</div>
+
+```{r echo=FALSE}
+acteurRef_specifique <- "PA721024"
+```
+
+```{r setup, include=FALSE}
+library(rmdformats)
+library(xml2)
+library(dplyr)
+library(tidyr)
+library(FactoMineR)
+library(ggplot2)
+library(factoextra)
+library(kableExtra)
+library(shiny)
+library(knitr)
+library(shinyWidgets)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+```{r graphics, include=FALSE}
+knitr::include_graphics("/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/Logo_FrontPopulaire_2024.svg.png")
+```
+
+```{r liste_depute, message=FALSE, warning=FALSE, include=FALSE}
+# Charger la bibliothèque xml2
+directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/AMO20xml/acteur"
+# Chemin vers un fichier XML pour examen
+myfile <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/AMO20xml/acteur/PA794478.xml"  # Remplacez par le chemin de l'un des fichiers téléchargés
+# Lire le fichier XML
+xml <- read_xml(myfile)
+# Afficher la structure du fichier XML
+#print(as.character(xml))
+# Installer les packages nécessaires si ce n'est pas déjà fait
+if (!requireNamespace("xml2", quietly = TRUE)) {
+  install.packages("xml2")
+}
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+# Charger les bibliothèques
+library(xml2)
+library(dplyr)
+# Lire les fichiers XML
+files <- list.files(path = directory, pattern = "\\.xml$", full.names = TRUE)
+# Fonction pour extraire les informations spécifiques
+extract_info <- function(file) {
+  xml <- read_xml(file)
+  # Déclarer le namespace
+  ns <- xml_ns(xml)
+  # Adapter le chemin XPath en fonction de la structure réelle du fichier XML
+  mandats <- xml_find_all(xml, ".//d1:mandat[@xsi:type='MandatParlementaire_type' and d1:legislature='16' and d1:typeOrgane='ASSEMBLEE']", ns)
+  result <- NULL
+  
+  for (mandat in mandats) {
+    type_organe <- xml_text(xml_find_first(mandat, ".//d1:typeOrgane", ns))
+    
+    if (type_organe == "ASSEMBLEE") {
+      uid <- xml_text(xml_find_first(xml, ".//d1:uid", ns))
+      civ <- xml_text(xml_find_first(xml, ".//d1:civ", ns))
+      prenom <- xml_text(xml_find_first(xml, ".//d1:prenom", ns))
+      nom <- xml_text(xml_find_first(xml, ".//d1:nom", ns))
+      
+      # Information pour typeOrgane PARPOL
+      parpol_uid <- xml_text(xml_find_first(xml, ".//d1:mandat[d1:typeOrgane='PARPOL']/d1:organes/d1:organeRef", ns))
+      GP_uid <- xml_text(xml_find_first(xml, ".//d1:mandat[d1:typeOrgane='GP']/d1:organes/d1:organeRef", ns))
+      # Information pour typeOrgane ASSEMBLEE
+      num_departement <- xml_text(xml_find_first(mandat, ".//d1:numDepartement", ns))
+      num_circo <- xml_text(xml_find_first(mandat, ".//d1:numCirco", ns))
+      region <- xml_text(xml_find_first(mandat, ".//d1:region", ns))
+      region_type <- xml_text(xml_find_first(mandat, ".//d1:regionType", ns))
+      departement <- xml_text(xml_find_first(mandat, ".//d1:departement", ns))
+      
+      result <- rbind(result, data.frame(
+        uid = uid,
+        civ = civ,
+        prenom = prenom,
+        nom = nom,
+        parpol_uid = parpol_uid,
+        GP_uid = GP_uid,
+        numDepartement = num_departement,
+        numCirco = num_circo,
+        region = region,
+        regionType = region_type,
+        departement = departement,
+        stringsAsFactors = FALSE
+      ))
+    }
+  }
+  return(result)
+}
+
+# Extraire les informations de chaque fichier et les combiner en un dataframe
+results <- do.call(rbind, lapply(files, extract_info))
+
+# Afficher le dataframe final
+results_unique <- distinct(results)
+results_same_circo <- results_unique %>% group_by(numDepartement, numCirco) %>% filter(n() > 1)
+depute <- results_unique
+# Charger les bibliothèques
+library(xml2)
+library(dplyr)
+# Lire les fichiers XML
+files_orga <- list.files(path = "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/AMO20xml/organe/", pattern = "\\.xml$", full.names = TRUE)
+
+# Fonction pour extraire les informations spécifiques
+extract_parti_groupe <- function(file) {
+  xml <- read_xml(file)
+  
+  # Déclarer le namespace
+  ns <- xml_ns(xml)
+  
+  # Adapter le chemin XPath en fonction de la structure réelle du fichier XML
+  code_type <- xml_text(xml_find_first(xml, ".//d1:codeType", ns))
+  
+  if (code_type %in% c("PARPOL", "GP")) {
+    uid <- xml_text(xml_find_first(xml, ".//d1:uid", ns))
+    libelle <- xml_text(xml_find_first(xml, ".//d1:libelle", ns))
+    libelle_abrege <- xml_text(xml_find_first(xml, ".//d1:libelleAbrege", ns))
+    couleur_associee <- xml_text(xml_find_first(xml, ".//d1:couleurAssociee", ns))
+    
+    # Remplacer les valeurs vides ou NA par NA
+    if (is.na(couleur_associee) || couleur_associee == "") {
+      couleur_associee <- NA
+    }
+    
+    return(data.frame(
+      codeType = code_type,
+      uid = uid,
+      libelle = libelle,
+      libelleAbrege = libelle_abrege,
+      couleurAssociee = couleur_associee,
+      stringsAsFactors = FALSE
+    ))
+  } else {
+    return(NULL)
+  }
+}
+
+# Extraire les informations de chaque fichier et les combiner en un dataframe
+parti_groupe <- do.call(rbind, lapply(files_orga, extract_parti_groupe))
+
+# Supprimer les doublons
+parti_groupe <- distinct(parti_groupe)
+
+
+# Filtrer les données de parti_groupe pour PARPOL et GP
+parpol_data <- parti_groupe %>% filter(codeType == "PARPOL")
+gp_data <- parti_groupe %>% filter(codeType == "GP")
+# Jointure avec parti_groupe pour parpol_uid
+depute_clean <- depute %>%
+  left_join(parpol_data %>%
+              select(uid, libelle, libelleAbrege, couleurAssociee),
+            by = c("parpol_uid" = "uid")) %>%
+  rename(parpol_libelle = libelle,
+         parpol_libelleAbrege = libelleAbrege,
+         parpol_couleurAssociee = couleurAssociee) %>%
+  left_join(gp_data %>%
+              select(uid, libelle, libelleAbrege, couleurAssociee),
+            by = c("GP_uid" = "uid")) %>%
+  rename(GP_libelle = libelle,
+         GP_libelleAbrege = libelleAbrege,
+         GP_couleurAssociee = couleurAssociee) %>%
+  mutate(couleur_Associe = coalesce(parpol_couleurAssociee, GP_couleurAssociee)) %>%
+  select(uid, civ, prenom, nom, numDepartement, numCirco, region, regionType, departement,
+         parpol_uid, parpol_libelle, parpol_libelleAbrege, GP_uid, GP_libelle, GP_libelleAbrege, couleur_Associe)
+colnames(depute_clean)[colnames(depute_clean) == "uid"] <- "acteurRef"
+```
+```{r fonction_votes, include=FALSE}
+# Charger les packages
+library(xml2)
+library(dplyr)
+
+# Fonction pour extraire les votes d'un fichier XML
+extract_votes <- function(file) {
+  xml_data <- read_xml(file)
+  
+  ns <- xml_ns(xml_data)  # Récupérer les espaces de noms pour les requêtes XPath
+  
+  dateScrutin <- xml_text(xml_find_first(xml_data, ".//d1:dateScrutin", ns))
+  libelle <- xml_text(xml_find_first(xml_data, ".//d1:titre", ns))
+  votes <- data.frame(dateScrutin = character(), libelle = character(), acteurRef = character(), vote = character(), parDelegation = character(), stringsAsFactors = FALSE)
+  
+  groupes <- xml_find_all(xml_data, ".//d1:groupe", ns)
+  
+  for (groupe in groupes) {
+    # Pour votes
+    pour_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:pours/d1:votant", ns)
+    if (length(pour_votants) > 0) {
+      pour_votants_df <- data.frame(
+        dateScrutin = rep(dateScrutin, length(pour_votants)),
+        libelle = rep(libelle, length(pour_votants)),
+        acteurRef = xml_text(xml_find_all(pour_votants, ".//d1:acteurRef", ns)),
+        vote = rep("Pour", length(pour_votants)),
+        parDelegation = xml_text(xml_find_all(pour_votants, ".//d1:parDelegation", ns)),
+        stringsAsFactors = FALSE
+      )
+      votes <- rbind(votes, pour_votants_df)
+    }
+    
+    # Contre votes
+    contre_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:contres/d1:votant", ns)
+    if (length(contre_votants) > 0) {
+      contre_votants_df <- data.frame(
+        dateScrutin = rep(dateScrutin, length(contre_votants)),
+        libelle = rep(libelle, length(contre_votants)),
+        acteurRef = xml_text(xml_find_all(contre_votants, ".//d1:acteurRef", ns)),
+        vote = rep("Contre", length(contre_votants)),
+        parDelegation = xml_text(xml_find_all(contre_votants, ".//d1:parDelegation", ns)),
+        stringsAsFactors = FALSE
+      )
+      votes <- rbind(votes, contre_votants_df)
+    }
+    
+    # Abstention votes
+    abstention_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:abstentions/d1:votant", ns)
+    if (length(abstention_votants) > 0) {
+      abstention_votants_df <- data.frame(
+        dateScrutin = rep(dateScrutin, length(abstention_votants)),
+        libelle = rep(libelle, length(abstention_votants)),
+        acteurRef = xml_text(xml_find_all(abstention_votants, ".//d1:acteurRef", ns)),
+        vote = rep("Abstention", length(abstention_votants)),
+        parDelegation = xml_text(xml_find_all(abstention_votants, ".//d1:parDelegation", ns)),
+        stringsAsFactors = FALSE
+      )
+      votes <- rbind(votes, abstention_votants_df)
+    }
+    
+    # Non votants
+    non_votants <- xml_find_all(groupe, ".//d1:decompteNominatif/d1:nonVotants/d1:votant", ns)
+    if (length(non_votants) > 0) {
+      non_votants_df <- data.frame(
+        dateScrutin = rep(dateScrutin, length(non_votants)),
+        libelle = rep(libelle, length(non_votants)),
+        acteurRef = xml_text(xml_find_all(non_votants, ".//d1:acteurRef", ns)),
+        vote = rep("Non Votant", length(non_votants)),
+        parDelegation = xml_text(xml_find_all(non_votants, ".//d1:parDelegation", ns)),
+        stringsAsFactors = FALSE
+      )
+      votes <- rbind(votes, non_votants_df)
+    }
+  }
+  
+  return(votes)
+}
+```
+```{r votes_list, include=FALSE}
+# Lister tous les fichiers XML dans le répertoire
+xml_dir <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/votes/"
+xml_files <- list.files(path = xml_dir, pattern = "*.xml", full.names = TRUE)
+
+# Appliquer la fonction à chaque fichier XML et combiner les résultats en un seul data frame
+votes_list <- lapply(xml_files, function(file) {
+  tryCatch({
+    extract_votes(file)
+  }, error = function(e) {
+    #message(paste("Erreur dans le fichier :", file))
+    #message(e)
+    return(data.frame(dateScrutin = character(), libelle = character(), acteurRef = character(), vote = character(), parDelegation = character(), stringsAsFactors = FALSE))
+  })
+})
+votes <- do.call(rbind, votes_list)
+```
+
+# Vote des députés
+## Tableau de recherche des votes de l'ensemble des députés
+
+```{r echo=FALSE}
+library(dplyr)
+library(tidyr)
+library(stringr)
+
+# Fonction pour combiner les couleurs (ici on simplifie en utilisant une seule couleur si plusieurs sont trouvées)
+combine_colors <- function(colors) {
+  specific_colors_red <- c("#77AA79", "#991414", "#E42313")
+  specific_colors_orange <- c("#CE5215", "#32B3CA", "#F8D434", "#61468F")
+  
+  if (all(specific_colors_red %in% colors)) {
+    return("#FF0000")  # RED
+  } else if (all(specific_colors_orange %in% colors)) {
+    return("darkorange")  # darkorange
+  } else if ("#4565AD" %in% colors) {
+    return("darkblue")  # darkblue
+  } else if ("#35495E" %in% colors) {
+    return("black")  # Black
+  } else if ("#8D949A" %in% colors) {
+    return(NA)  # Aucune couleur
+  } else {
+    return(colors[1])  # Sinon, retourner la première couleur (ou une autre logique)
+  }
+}
+
+
+# Rechercher les noms dans les titres et ajouter les couleurs associées
+votes2 <- votes %>%
+  rowwise() %>%
+  mutate(
+    Noms = list(depute_clean$nom[str_detect(libelle, depute_clean$nom)]),
+    Parti = list(depute_clean$parpol_libelle[depute_clean$nom %in% unlist(Noms)]),
+    GP = list(depute_clean$GP_libelle[depute_clean$nom %in% unlist(Noms)]),
+    couleurs_associees = list(depute_clean$couleur_Associe[depute_clean$nom %in% unlist(Noms)]),
+    couleur_finale = combine_colors(unlist(couleurs_associees))
+  )%>%
+  ungroup()
+
+# Afficher les premières lignes du tableau mis à jour
+#head(votes2)
+
+# Tableau interactif
+library(DT)
+datatable(votes2, options = list(pageLength = 10, autoWidth = TRUE))
+```
+```{r include=FALSE}
+# Afficher les résultats
+#print(votes)
+votes_safe <- votes
+votes2_safe <- votes2
+```
+
+## Regroupement des partis en fonction des votes
+
+```{r echo=FALSE}
+library(R.temis)
+library(FactoMineR)
+library(dplyr)
+library(tidyr)
+library(R.temis)
+# Créer un dataframe par acteur avec les votes
+votes_per_actor <- votes %>%
+  group_by(acteurRef, vote) %>%
+  summarize(n = n(), .groups = 'drop') %>%
+  pivot_wider(names_from = vote, values_from = n, values_fill = list(n = 0))
+
+# Ajouter les informations du groupe parlementaire
+votes_per_actor <- votes_per_actor %>%
+  left_join(depute_clean %>% select(acteurRef, GP_libelleAbrege, couleur_Associe), by = "acteurRef")
+# Préparer les données
+votes_per_actor <- votes_per_actor %>%
+  mutate(across(Abstention:Pour, as.character))  # Convertir en caractères pour l'ACM
+
+# Effectuer l'ACM
+acm <- MCA(votes_per_actor %>% select(-acteurRef, -couleur_Associe), quali.sup = 1, graph = FALSE)
+#explor(acm)
+```
+
+## Regroupement des partis en fonction des votes
+
+```{r echo=FALSE}
+res <- explor::prepare_results(acm)
+explor::MCA_ind_plot(res, xax = 1, yax = 2, ind_sup = FALSE, lab_var = NULL,
+    ind_lab_min_contrib = 0, col_var = "GP_libelleAbrege", labels_size = 9,
+    point_opacity = 0.5, opacity_var = "Cos2", point_size = 64, ellipses = TRUE,
+    transitions = TRUE, labels_positions = NULL, xlim = c(-2.43, 5.52), ylim = c(-3.39,
+        4.56))
+```
+
+## ACM 
+
+```{r echo=FALSE}
+# Charger les packages nécessaires
+library(FactoMineR)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Préparer les données
+votes_wide <- votes %>%
+  pivot_wider(names_from = libelle, values_from = vote, values_fill = list(vote = "Absent"))%>%
+  left_join(depute_clean %>% select(acteurRef, GP_uid, couleur_Associe), by = "acteurRef")
+
+# Convertir les votes en facteurs
+votes_wide <- votes_wide %>%
+  mutate(across(-acteurRef, as.factor))
+
+# Convertir acteurRef en facteur
+votes_wide$acteurRef <- as.factor(votes_wide$acteurRef)
+
+# Effectuer l'ACM
+acm_result <- MCA(votes_wide %>% select(-acteurRef), graph = FALSE)
+library(factoextra)
+# Visualiser les individus
+#explor(acm)
+res <- explor::prepare_results(acm)
+explor::MCA_var_plot(res, xax = 1, yax = 2, var_sup = TRUE, var_sup_choice = "Abstention",
+    var_lab_min_contrib = 0, col_var = "Variable", symbol_var = "Type", size_var = NULL,
+    size_range = c(10, 300), labels_size = 10, point_size = 56, transitions = TRUE,
+    labels_positions = NULL, labels_prepend_var = FALSE)
+```
+
+# Analyse de `r acteurRef_specifique`
+## Taux de présence en commission
+
+```{r presence, echo=FALSE}
+library(xml2)
+library(purrr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+acteurRef_specifique <- "PA721024"
+main_directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/"
+# Fonction pour analyser un fichier XML et compter les occurrences des types de présence pour un acteur spécifique
+analyze_xml <- function(file, acteurRef_specifique) {
+  xml_content <- read_xml(file)
+  acteur_refs <- xml_find_all(xml_content, ".//d1:participantInterne/d1:acteurRef", xml_ns(xml_content))
+  presences <- xml_find_all(xml_content, ".//d1:participantInterne/d1:presence", xml_ns(xml_content))
+  
+  presence_counts <- list(présent = 0, absent = 0, excusé = 0)
+  
+  for (i in seq_along(acteur_refs)) {
+    if (xml_text(acteur_refs[i]) == acteurRef_specifique) {
+      presence <- xml_text(presences[i])
+      if (presence %in% names(presence_counts)) {
+        presence_counts[[presence]] <- presence_counts[[presence]] + 1
+      }
+    }
+  }
+  
+  return(presence_counts)
+}
+
+# Fonction pour parcourir les dossiers et sous-dossiers et analyser les fichiers XML
+analyze_directory <- function(dir_path, acteurRef_specifique) {
+  files <- list.files(dir_path, pattern = "\\.xml$", recursive = TRUE, full.names = TRUE)
+  total_counts <- list(présent = 0, absent = 0, excusé = 0)
+  
+  for (file in files) {
+    file_counts <- analyze_xml(file, acteurRef_specifique)
+    total_counts$présent <- total_counts$présent + file_counts$présent
+    total_counts$absent <- total_counts$absent + file_counts$absent
+    total_counts$excusé <- total_counts$excusé + file_counts$excusé
+  }
+  
+  return(total_counts)
+}
+
+# Définir le chemin du dossier principal et l'acteur spécifique à rechercher
+
+# Appeler la fonction pour analyser le répertoire
+presence <- analyze_directory(main_directory, acteurRef_specifique)
+
+# Afficher les résultats
+presence <- as.data.frame(presence)
+# Reshape data to long format
+presence_long <- presence %>%
+  pivot_longer(cols = everything(), names_to = "Statut", values_to = "Nombre")
+
+# Create the plot
+ggplot(presence_long, aes(x = Statut, y = Nombre, fill = Statut)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("présent" = "green", "absent" = "red", "excusé" = "blue")) +
+  labs(title = "Taux de présence", x = "Statut", y = "Nombre") +
+  theme_minimal()
+```
+
+## Tableau des votes
+
+```{r echo=FALSE}
+votes_acteurRef_specifique <- votes %>%
+  filter(acteurRef == acteurRef_specifique) %>%
+  rowwise() %>%
+  mutate(
+    noms_trouves = list(depute_clean$nom[depute_clean$acteurRef == acteurRef_specifique]),
+    couleurs_associees = list(depute_clean$couleur_Associe[depute_clean$acteurRef == acteurRef_specifique]),
+    couleur_finale = list(combine_colors(couleurs_associees))
+  ) %>%
+  ungroup() %>%
+  left_join(depute_clean, by = "acteurRef") %>%
+  select(dateScrutin, libelle, vote, acteurRef,  GP_libelle, couleur_finale)
+datatable(votes_acteurRef_specifique, options = list(pageLength = 10, autoWidth = TRUE))
+```
+
+## Distribution du types de votes
+
+```{r echo=FALSE}
+library(ggplot2)
+# Barplot des votes de l'acteur spécifique
+ggplot(votes_acteurRef_specifique, aes(x = vote)) +
+  geom_bar(fill = "skyblue") +
+  theme_minimal() +
+  labs(title = paste("Distribution des votes pour ", acteurRef_specifique), x = "Type de vote", y = "Nombre de votes")
+```
+
+## tableau de recherche des votes de `r acteurRef_specifique`
+
+```{r echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(grid)
+library(png)
+library(jpeg)
+df_datan <- data.frame(
+  Groupe = c(
+    "Renaissance (RE)", "Démocrate (MoDem et Indépendants) (DEM)", "Horizons et apparentés (HOR)", 
+    "Les Républicains (LR)", "Socialistes et apparentés (SOC-A)", 
+    "Libertés, Indépendants, Outre-mer et Territoires (LIOT)", "Rassemblement National (RN)", 
+    "Socialistes et apparentés - NUPES (SOC)", "Écologiste - NUPES (ECOLO)", 
+    "Non inscrit (NI)", "La France insoumise - NUPES (LFI-NUPES)", "Gauche démocrate et républicaine - NUPES (GDR-NUPES)"
+  ),
+  `Proximité` = c(
+    "100 %", "95 %", "92 %", "63 %", "48 %", "40 %", "35 %", "33 %", "31 %", "31 %", "24 %", "21 %"
+  ),
+  `Nbr de votes` = c(1595, 1595, 1595, 1595, 457, 1595, 1595, 1138, 1595, 1595, 1595, 1595), 
+  Regroupement = c(  "Macronistes", "Macronistes", "Macronistes", 
+    "Droite", "Front Pop'", 
+    "Droite", "Ex Droite", 
+    "Front Pop'", "Front Pop'", 
+    "Indépendants", "Front Pop'", "Front Pop'")
+)
+
+
+
+# Ajouter une colonne 'Regroupement' au dataframe
+df_datan <- df_datan %>%
+  mutate(Regroupement = case_when(
+    Groupe %in% c("Renaissance (RE)", "Démocrate (MoDem et Indépendants) (DEM)", "Horizons et apparentés (HOR)") ~ "Macronistes",
+    Groupe %in% c("Les Républicains (LR)", "Libertés, Indépendants, Outre-mer et Territoires (LIOT)") ~ "Droite",
+    Groupe %in% c("Socialistes et apparentés (SOC-A)", "Socialistes et apparentés - NUPES (SOC)", "Écologiste - NUPES (ECOLO)", "La France insoumise - NUPES (LFI-NUPES)", "Gauche démocrate et républicaine - NUPES (GDR-NUPES)") ~ "Front Pop'",
+    Groupe == "Rassemblement National (RN)" ~ "Extrême Droite",
+    Groupe == "Non inscrit (NI)" ~ "Indépendants"
+  )
+)
+
+
+# Calculer le Taux de proximité moyen pour chaque regroupement
+df_taux_moyen <- df_datan %>%
+  mutate(`Proximité` = as.numeric(sub("%", "", `Proximité`))) %>%
+  group_by(Regroupement) %>%
+  summarize(`Proximité_moyen` = mean(`Proximité`)) %>%
+  ungroup() %>%
+  arrange(desc(`Proximité_moyen`))
+datatable(df_taux_moyen, options = list(pageLength = 10, autoWidth = TRUE))
+```
+```{r echo=FALSE}
+# Définir les couleurs pour chaque regroupement
+couleurs <- c(
+  "Front Pop'" = "#ff4a52", # Rouge
+  "Droite" = "#4565AD", # Vert
+  "Macronistes" = "#61468F", # Bleu
+  "Extrême Droite" = "#35495E", # Jaune
+  "Indépendants" = "#8D949A" # Magenta
+)
+
+# Créer un superbe plot
+# Réordonner les facteurs de regroupement pour ggplot
+df_taux_moyen$Regroupement <- factor(df_taux_moyen$Regroupement, levels = df_taux_moyen$Regroupement)
+
+        
+# Create the plot
+library(ggplot2)
+library(dplyr)
+library(scales)
+plot <- ggplot(df_taux_moyen, aes(x = reorder(Regroupement, -Proximité_moyen), y = Proximité_moyen, fill = Regroupement)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  theme_minimal() +
+  labs(title = "Proximité du vote de Anne Genetet",
+       x = "",
+       y = "") +
+  theme(plot.title = element_text(hjust = 0.5, size = 20, face = "bold", family = "serif"),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 12, face = "italic", family = "serif"),
+        axis.text.y = element_text(size = 12, face = "italic", family = "serif"),
+        axis.title = element_text(size = 14, face = "italic", family = "serif"),
+        panel.background = element_blank(),
+        plot.background = element_rect(fill = "#F4EECA"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
+  scale_fill_manual(values = couleurs) 
+
+# +
+#  annotate("text", label = "Source : datan.fr", x = Inf, y = -Inf, 
+#           hjust = 1, vjust = -0.5, size = 3, color = "#ff4a52",
+#           fontface = "italic", family = "serif")
+
+print(plot)
+```
+
+## Taux de proximité du vote avec les différents groupes
+
+```{r echo=FALSE}
+# Convertir `dateScrutin` en type Date
+votes_acteur <- votes %>%
+  filter(acteurRef == acteurRef_specifique) %>%
+  rowwise() %>%
+  mutate(
+    noms_trouves = list(depute_clean$nom[str_detect(libelle, depute_clean$nom)]),
+    couleurs_associees = list(depute_clean$couleur_Associe[depute_clean$nom %in% noms_trouves]),
+        couleur_finale = list(combine_colors(couleurs_associees))
+  ) %>%
+  ungroup()
+
+votes_acteur$dateScrutin <- as.Date(votes_acteur$dateScrutin)
+
+# Fonction pour combiner les couleurs
+combine_colors <- function(colors) {
+  specific_colors_red <- c("#77AA79", "#991414", "#E42313")
+  specific_colors_orange <- c("#CE5215", "#32B3CA", "#61468F")
+  
+  if (any(specific_colors_red %in% colors)) {
+    return("Gauche")  # RED
+  } else if (any(specific_colors_orange %in% colors)) {
+    return("Majorité")  # darkorange
+  } else if ("#4565AD" %in% colors) {
+    return("Républicains")  # darkblue
+  } else if ("#35495E" %in% colors) {
+    return("RN")  # Black
+  } else if ("#8D949A" %in% colors) {
+    return("NI")  # Aucune couleur
+   } else if ("#F8D434" %in% colors) {
+    return("LIOT")  # Aucune couleur
+  } else {
+    return(colors[1]) # Sinon, retourner la première couleur (ou une autre logique)
+  }
+}
+
+# Mettre à jour les couleurs dans votes_acteur
+votes_acteur <- votes_acteur %>%
+  mutate(Couleur_Finale = mapply(function(libelle, colors) {
+    noms_trouves <- depute_clean$nom[sapply(depute_clean$nom, function(nom) grepl(nom, libelle))]
+    if (length(noms_trouves) > 0) {
+      colors_to_combine <- unique(depute_clean$couleur_Associe[depute_clean$nom %in% noms_trouves])
+      combine_colors(colors_to_combine)
+    } else {
+      NA
+    }
+  }, libelle, couleur_finale))
+
+# Filtrer les valeurs NA avant de tracer le graphique
+votes_acteur_filtered <- votes_acteur %>% filter(!is.na(Couleur_Finale))
+
+# Vérifier et afficher les premières lignes du dataframe filtré
+# head(votes_acteur_filtered)
+
+# Visualisation
+library(ggplot2)
+
+ggplot(votes_acteur_filtered, aes(x = dateScrutin, y = vote, color = Couleur_Finale)) +
+  geom_point(size = 3) +
+  labs(title = paste("Votes de",acteurRef_specifique, "en fonction des titres"), x = "Date du Scrutin", y = "Vote") +
+  scale_color_manual(name = "Tendances politiques", values = c("Gauche" = "red", "Majorité" = "darkorange", "Républicains" = "darkblue", "RN" = "black", "NI" = "grey", "LIOT" = "yellow")) +
+  theme_minimal()
+```
+
+
+
+## Liste des votes
+
+```{r echo=FALSE}
+# Supprimer les rangs vides d'une large liste de data frames
+clean_dataframes <- function(df_list) {
+  lapply(df_list, function(df) {
+    df <- na.omit(df)
+    df[complete.cases(df), ]
+  })
+}
+
+# Appliquer la fonction à votre liste de data frames
+cleaned_votes_list <- clean_dataframes(votes_list)
+```
+
+<!-->## Any files related to `r acteurRef_specifique`<-->
+
+```{r eval=FALSE, include=FALSE}
+library(xml2)
+library(purrr)
+# Définir le chemin du dossier principal
+search_string <- "PA721024"
+main_directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/"
+
+# Fonction pour rechercher une chaîne de caractères dans un fichier XML et extraire le contexte
+search_in_xml <- function(file, search_string, context_length = 50) {
+  xml_content <- read_xml(file)
+  xml_text <- xml_text(xml_content)
+  
+  if (grepl(search_string, xml_text)) {
+    match_start <- gregexpr(search_string, xml_text)[[1]]
+    context <- sapply(match_start, function(start) {
+      end <- start + nchar(search_string) - 1
+      start_context <- max(1, start - context_length)
+      end_context <- min(nchar(xml_text), end + context_length)
+      substring(xml_text, start_context, end_context)
+    })
+    return(context)
+  } else {
+    return(NULL)
+  }
+}
+
+# Fonction pour parcourir les dossiers et sous-dossiers
+search_in_directories <- function(dir_path, search_string, context_length = 250) {
+  # Obtenir la liste de tous les fichiers dans le dossier et sous-dossiers
+  files <- list.files(dir_path, pattern = "\\.xml$", recursive = TRUE, full.names = TRUE)
+  
+  # Filtrer les fichiers contenant la chaîne de caractères et extraire le contexte
+  results <- map(files, ~search_in_xml(.x, search_string, context_length))
+  names(results) <- files
+  
+  # Filtrer les résultats non nuls
+  results <- results[!sapply(results, is.null)]
+  
+  return(results)
+}
+
+# Appeler la fonction
+anyfiles <- search_in_directories(main_directory, search_string)
+
+# Afficher les résultats
+anyfiles
+```
+
+## Dossiers législatifs
+
+```{r doc_legis, echo=FALSE}
+library(xml2)
+library(purrr)
+library(dplyr)
+acteurRef_specifique <- "PA721024"
+main_directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/"
+
+# Fonction pour analyser un fichier XML et extraire les informations pour un acteur spécifique
+analyze_xml <- function(file, acteurRef_specifique) {
+  xml_content <- read_xml(file)
+  
+  # Extraire uid, titrePrincipalCourt, denominationStructurelle, dateDepot, et dossierRef
+  uid <- xml_text(xml_find_first(xml_content, ".//d1:uid", xml_ns(xml_content)))
+  titre <- xml_text(xml_find_first(xml_content, ".//d1:titrePrincipalCourt", xml_ns(xml_content)))
+  denomination <- xml_text(xml_find_first(xml_content, ".//d1:denominationStructurelle", xml_ns(xml_content)))
+  date_depot <- xml_text(xml_find_first(xml_content, ".//d1:cycleDeVie/d1:chrono/d1:dateDepot", xml_ns(xml_content)))
+  date_depot <- substr(date_depot, 1, 10) # Garder uniquement les 10 premiers caractères (YYYY-MM-DD)
+  dossier_ref <- xml_text(xml_find_first(xml_content, ".//d1:dossierRef", xml_ns(xml_content)))
+  
+  # Rechercher les occurrences d'auteur
+  auteur_refs <- xml_find_all(xml_content, ".//d1:auteurs/d1:auteur/d1:acteur/d1:acteurRef", xml_ns(xml_content))
+  auteur_qualites <- xml_find_all(xml_content, ".//d1:auteurs/d1:auteur/d1:acteur/d1:qualite", xml_ns(xml_content))
+  
+  # Rechercher les occurrences de cosignataire
+  cosignataire_refs <- xml_find_all(xml_content, ".//d1:coSignataires/d1:coSignataire/d1:acteur/d1:acteurRef", xml_ns(xml_content))
+  
+  results <- list()
+  
+  # Vérifier les auteurs
+  for (i in seq_along(auteur_refs)) {
+    if (xml_text(auteur_refs[i]) == acteurRef_specifique && xml_text(auteur_qualites[i]) == "auteur") {
+      results <- append(results, list(data.frame(role = "auteur", uid = uid, titre = titre, denomination = denomination, dateDepot = date_depot, dossierRef = dossier_ref)))
+    }
+  }
+  
+  # Vérifier les cosignataires
+  for (i in seq_along(cosignataire_refs)) {
+    if (xml_text(cosignataire_refs[i]) == acteurRef_specifique) {
+      results <- append(results, list(data.frame(role = "cosignataire", uid = uid, titre = titre, denomination = denomination, dateDepot = date_depot, dossierRef = dossier_ref)))
+    }
+  }
+  
+  return(bind_rows(results))
+}
+
+# Fonction pour parcourir les dossiers et sous-dossiers et analyser les fichiers XML
+analyze_directory <- function(dir_path, acteurRef_specifique) {
+  files <- list.files(dir_path, pattern = "\\.xml$", recursive = TRUE, full.names = TRUE)
+  results <- map_dfr(files, ~analyze_xml(.x, acteurRef_specifique))
+  return(results)
+}
+
+# Appeler la fonction pour analyser le répertoire
+auteur_signataire <- analyze_directory(main_directory, acteurRef_specifique)
+
+# Afficher les résultats
+datatable(auteur_signataire, style ="auto", options = list(pageLength = 10, autoWidth = TRUE, colResize = TRUE))
+```
+
+## Questions et questions au gouvernement
+
+```{r question, echo=FALSE}
+library(xml2)
+library(purrr)
+library(dplyr)
+
+acteurRef_specifique <- "PA721024"
+main_directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/"
+# Fonction pour analyser un fichier XML et extraire les informations pour un acteur spécifique
+analyze_xml <- function(file, acteurRef_specifique) {
+  xml_content <- read_xml(file)
+  
+  # Extraire uid, typeQuestion
+  uid <- xml_text(xml_find_first(xml_content, ".//d1:uid", xml_ns(xml_content)))
+  type_question <- xml_text(xml_find_first(xml_content, ".//d1:type", xml_ns(xml_content)))
+  
+  # Extraire la référence de l'acteur dans l'auteur
+  auteur_ref <- xml_text(xml_find_first(xml_content, ".//d1:auteur/d1:identite/d1:acteurRef", xml_ns(xml_content)))
+  
+  # Extraire rubrique, analyse, textesQuestion, textesReponse
+  rubrique <- xml_text(xml_find_first(xml_content, ".//d1:indexationAN/d1:rubrique", xml_ns(xml_content)))
+  analyse <- xml_text(xml_find_first(xml_content, ".//d1:indexationAN/d1:analyses/d1:analyse", xml_ns(xml_content)))
+  texte_question <- xml_text(xml_find_first(xml_content, ".//d1:textesQuestion/d1:texteQuestion/d1:texte", xml_ns(xml_content)))
+  texte_reponse <- xml_text(xml_find_first(xml_content, ".//d1:textesReponse/d1:texteReponse/d1:texte", xml_ns(xml_content)))
+  
+  # Extraire la date de dépôt
+  date_depot <- xml_text(xml_find_first(xml_content, ".//d1:infoJO/d1:dateJO", xml_ns(xml_content)))
+  
+  # Vérifier si l'acteur est l'auteur
+  if (auteur_ref == acteurRef_specifique) {
+    return(data.frame(
+      role = "auteur",
+      uid = uid,
+      typeQuestion = type_question,
+      rubrique = rubrique,
+      analyse = analyse,
+      texte_question = texte_question,
+      texte_reponse = texte_reponse,
+      dateDepot = substr(date_depot, 1, 10)  # Garder uniquement les 10 premiers caractères (YYYY-MM-DD)
+    ))
+  }
+  
+  return(NULL)
+}
+
+# Fonction pour parcourir les dossiers et sous-dossiers et analyser les fichiers XML
+analyze_directory <- function(dir_path, acteurRef_specifique) {
+  files <- list.files(dir_path, pattern = "^QANR.*\\.xml$", recursive = TRUE, full.names = TRUE)
+  results <- map_dfr(files, ~analyze_xml(.x, acteurRef_specifique))
+  return(results)
+}
+
+# Appeler la fonction pour analyser le répertoire
+questions <- analyze_directory(main_directory, acteurRef_specifique)
+
+# Afficher les résultats
+datatable(questions, style ="auto", options = list(pageLength = 10, autoWidth = TRUE, colResize = TRUE))
+```
+
+## CR des débats
+
+```{r CR, echo=FALSE}
+library(xml2)
+library(purrr)
+library(dplyr)
+
+# Fonction pour analyser un fichier XML et extraire le texte pour un acteur spécifique
+analyze_xml_crs <- function(file, acteurRef_specifique) {
+  xml_content <- read_xml(file)
+  
+  # Extraire la date de la séance
+  dateSeanceJour <- xml_text(xml_find_first(xml_content, ".//d1:dateSeanceJour", xml_ns(xml_content)))
+  
+  # Extraire les informations des paragraphes contenant l'acteur spécifique
+  paragraphe_nodes <- xml_find_all(xml_content, paste0(".//d1:paragraphe[@id_acteur='", acteurRef_specifique, "']"), xml_ns(xml_content))
+  
+  paragraphs <- map_df(paragraphe_nodes, function(paragraphe) {
+    texte_node <- xml_find_first(paragraphe, ".//d1:texte", xml_ns(xml_content))
+    if (!is.na(texte_node)) {
+      texte <- xml_text(texte_node)
+    } else {
+      texte <- NA
+    }
+        # Extraire l'id du paragraphe courant
+    id_ref <- xml_attr(paragraphe, "id_syceron")
+    # Extraire les paragraphes précédents et suivants
+    previous_paragraph <- xml_find_first(paragraphe, "preceding-sibling::d1:paragraphe[1]", xml_ns(xml_content))
+    next_paragraph <- xml_find_first(paragraphe, "following-sibling::d1:paragraphe[1]", xml_ns(xml_content))
+    
+    previous_text <- if (!is.na(previous_paragraph)) xml_text(xml_find_first(previous_paragraph, ".//d1:texte", xml_ns(xml_content))) else NA
+    next_text <- if (!is.na(next_paragraph)) xml_text(xml_find_first(next_paragraph, ".//d1:texte", xml_ns(xml_content))) else NA
+    
+    previous_id_acteur <- if (!is.na(previous_paragraph)) xml_attr(previous_paragraph, "id_acteur") else NA
+    next_id_acteur <- if (!is.na(next_paragraph)) xml_attr(next_paragraph, "id_acteur") else NA
+    
+    previous_nom_acteur <- if (!is.na(previous_paragraph)) xml_text(xml_find_first(previous_paragraph, ".//d1:orateur/d1:nom", xml_ns(xml_content))) else NA
+    next_nom_acteur <- if (!is.na(next_paragraph)) xml_text(xml_find_first(next_paragraph, ".//d1:orateur/d1:nom", xml_ns(xml_content))) else NA
+    
+    # Trouver le texte du point contenant ce paragraphe
+    parent_point <- xml_find_first(paragraphe, "ancestor::d1:point", xml_ns(xml_content))
+    point_texte <- if (!is.na(parent_point)) xml_text(xml_find_first(parent_point, ".//d1:texte", xml_ns(xml_content))) else NA
+    
+    return(data.frame(
+      Date = dateSeanceJour,
+      id_ref = id_ref,
+      point_text = point_texte,
+      previous_id = previous_id_acteur,
+      previous_nom = previous_nom_acteur,
+      previous_text = previous_text,
+      text = texte,
+      next_id = next_id_acteur,
+      next_nom = next_nom_acteur,
+      next_text = next_text,
+      stringsAsFactors = FALSE
+    ))
+  })
+  
+  return(paragraphs)
+}
+
+# Chemin vers le répertoire contenant les fichiers XML
+main_directory <- "/Users/fabiengouez/Desktop/R_ET_ET_RMD/pol_depute/src16/debat/compteRendu"
+
+# Acteur spécifique à rechercher
+acteurRef_specifique <- "PA721024"
+
+# Trouver tous les fichiers CRS dans le répertoire principal
+files <- list.files(main_directory, pattern = "^CRS.*\\.xml$", full.names = TRUE)
+
+# Appliquer la fonction à chaque fichier et combiner les résultats dans un dataframe
+debats <- map_df(files, analyze_xml_crs, acteurRef_specifique = acteurRef_specifique)
+
+# Afficher les résultats
+#as_tibble(debats)
+library(DT)
+datatable(debats, style ="auto", options = list(pageLength = 10, autoWidth = TRUE, colResize = TRUE))
+```

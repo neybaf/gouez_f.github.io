@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2023IDC446430</uid>
+  <timeStampDebut>2022-12-14T17:30:00.000+01:00</timeStampDebut>
+  <lieu>
+    <lieuRef xsi:nil="true"/>
+    <libelleLong>Visioconférence sans salle</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2022-12-09T00:00:00.000+01:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO805350</organeReuniRef>
+  <participants>
+    <participantsInternes>
+      <participantInterne>
+        <acteurRef>PA719080</acteurRef>
+        <presence>présent</presence>
+      </participantInterne>
+      <participantInterne>
+        <acteurRef>PA795076</acteurRef>
+        <presence>excusé</presence>
+      </participantInterne>
+    </participantsInternes>
+    <personnesAuditionnees>
+      <personneAuditionnee/>
+    </personnesAuditionnees>
+  </participants>
+  <visioConference>true</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>false</ouverturePresse>
+  <captationVideo>false</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Audition de M. Michel Caron, président de l’Association nationale des assurés sinistrés de la sècheresse (A.N.A.S.S).</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>audition de M. Michel Caron, président de l’Association nationale des assurés sinistrés de la sècheresse (A.N.A.S.S).</item>
+    </resumeODJ>
+    <pointsODJ/>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

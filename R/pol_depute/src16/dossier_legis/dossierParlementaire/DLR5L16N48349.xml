@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N48349</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Proposition de loi en faveur de la préservation et de la reconquête de la haie</titre>
+    <titreChemin>DLR5L16N48349</titreChemin>
+    <senatChemin>http://www.senat.fr/dossier-legislatif/ppl22-839.html</senatChemin>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>2</code>
+    <libelle>Proposition de loi ordinaire</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA775282</acteurRef>
+        <mandatRef>PM775584</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA429866</acteurRef>
+        <mandatRef>PM736287</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775180</acteurRef>
+        <mandatRef>PM775466</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA801838</acteurRef>
+        <mandatRef>PM801842</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA429845</acteurRef>
+        <mandatRef>PM736278</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775214</acteurRef>
+        <mandatRef>PM775498</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775224</acteurRef>
+        <mandatRef>PM775512</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA736177</acteurRef>
+        <mandatRef>PM736318</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775252</acteurRef>
+        <mandatRef>PM775558</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775262</acteurRef>
+        <mandatRef>PM775548</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA775272</acteurRef>
+        <mandatRef>PM775562</mandatRef>
+      </acteur>
+      <acteur>
+        <acteurRef>PA785857</acteurRef>
+        <mandatRef>PM785867</mandatRef>
+      </acteur>
+    </acteurs>
+    <organes>
+      <organe>
+        <organeRef>
+          <uid>PO78718</uid>
+        </organeRef>
+      </organe>
+    </organes>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-SN1-48349</uid>
+      <codeActe>SN1</codeActe>
+      <libelleActe>
+        <nomCanonique>1ère lecture (1ère assemblée saisie)</nomCanonique>
+        <libelleCourt>1ère lecture</libelleCourt>
+      </libelleActe>
+      <organeRef>PO78718</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotInitiative_Type">
+          <uid>L16-VD214660DI</uid>
+          <codeActe>SN1-DEPOT</codeActe>
+          <libelleActe>
+            <nomCanonique>1er dépôt d'une initiative.</nomCanonique>
+            <libelleCourt>1er dépôt d'une initiative.</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe>2023-07-05T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>PIONSNR5S399B0839</texteAssocie>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-SN1-COM-48349</uid>
+          <codeActe>SN1-COM</codeActe>
+          <libelleActe>
+            <nomCanonique>Travaux des commissions</nomCanonique>
+            <libelleCourt>Travaux des commissions</libelleCourt>
+          </libelleActe>
+          <organeRef>PO78718</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="Etape_Type">
+              <uid>L16-VD214661CF</uid>
+              <codeActe>SN1-COM-FOND</codeActe>
+              <libelleActe>
+                <nomCanonique>Travaux de la commission saisie au fond</nomCanonique>
+                <libelleCourt>Travaux de la commission saisie au fond</libelleCourt>
+              </libelleActe>
+              <organeRef>PO516753</organeRef>
+              <dateActe xsi:nil="true"/>
+              <actesLegislatifs>
+                <acteLegislatif xsi:type="SaisieComFond_Type">
+                  <uid>L16-VD214661CFS</uid>
+                  <codeActe>SN1-COM-FOND-SAISIE</codeActe>
+                  <libelleActe>
+                    <nomCanonique>Renvoi en commission au fond</nomCanonique>
+                    <libelleCourt>Renvoi en commission au fond</libelleCourt>
+                  </libelleActe>
+                  <organeRef>PO516753</organeRef>
+                  <dateActe>2023-07-05T00:00:00.000+02:00</dateActe>
+                  <actesLegislatifs xsi:nil="true"/>
+                </acteLegislatif>
+              </actesLegislatifs>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

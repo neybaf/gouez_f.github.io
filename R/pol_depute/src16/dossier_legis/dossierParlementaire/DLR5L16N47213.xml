@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierIniativeExecutif_Type">
+  <uid>DLR5L16N47213</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Motion de censure déposée en application de l'article 49, alinéa 2, de la Constitution par Mme Le Pen et 87 de ses collègues</titre>
+    <titreChemin>motion_censure_rn_retraite</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>13</code>
+    <libelle>Engagement de la responsabilité gouvernementale</libelle>
+  </procedureParlementaire>
+  <initiateur/>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN21-47213</uid>
+      <codeActe>AN21</codeActe>
+      <libelleActe>
+        <nomCanonique>Débat</nomCanonique>
+        <libelleCourt>Débat</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotMotionCensure_Type">
+          <uid>L16-VD211785</uid>
+          <codeActe>AN21-MOTION</codeActe>
+          <libelleActe>
+            <nomCanonique>Motion de censure</nomCanonique>
+            <libelleCourt>Motion de censure</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2023-02-15T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>MIONANR5L16-N14</texteAssocie>
+          <dateRetrait xsi:nil="true"/>
+        </acteLegislatif>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN21-DEBATS-47213</uid>
+          <codeActe>AN21-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L16-VD211832S45318</uid>
+              <codeActe>AN21-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2023-02-17T00:00:00.000+01:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L16S2023IDS26804</reunionRef>
+              <odjRef>RUANR5L16S2023IDS26804PT45318</odjRef>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

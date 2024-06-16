@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierLegislatif_Type">
+  <uid>DLR5L16N48386</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Pétition n°1067 du 20 octobre 2022 « Allongement de la durée du congé maternité »</titre>
+    <titreChemin>petition_1067_allongement_duree_conge_maternite</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>16</code>
+    <libelle>Pétitions</libelle>
+  </procedureParlementaire>
+  <initiateur/>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN20-48386</uid>
+      <codeActe>AN20</codeActe>
+      <libelleActe>
+        <nomCanonique>Travaux</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotRapport_Type">
+          <uid>L16-VD214737</uid>
+          <codeActe>AN20-RAPPORT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt de rapport</nomCanonique>
+            <libelleCourt>Dépôt de rapport</libelleCourt>
+          </libelleActe>
+          <organeRef>PO420120</organeRef>
+          <dateActe>2023-07-12T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>RAPPANR5L16B1525</texteAssocie>
+          <texteAdopte xsi:nil="true"/>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

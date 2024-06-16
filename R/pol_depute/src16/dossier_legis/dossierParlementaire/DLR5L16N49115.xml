@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierIniativeExecutif_Type">
+  <uid>DLR5L16N49115</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Engagement de la responsabilité du Gouvernement sur la deuxième partie et l'ensemble du projet de loi de finances pour 2024 (nouvelle lecture)</titre>
+    <titreChemin>responsabilite_PLF2024_nouvellelecture_deuxiemepartie</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>13</code>
+    <libelle>Engagement de la responsabilité gouvernementale</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA717161</acteurRef>
+        <mandatRef>PM791583</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN21-49115</uid>
+      <codeActe>AN21</codeActe>
+      <libelleActe>
+        <nomCanonique>Débat</nomCanonique>
+        <libelleCourt>Débat</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DeclarationGouvernement_Type">
+          <uid>L16-VD217057</uid>
+          <codeActe>AN21-DGVT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt d'une déclaration du gouvernement</nomCanonique>
+            <libelleCourt>Dépôt d'une déclaration du gouvernement</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe>2023-12-16T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DepotMotionCensure_Type">
+              <uid>L16-VD217059</uid>
+              <codeActe>MOTION</codeActe>
+              <libelleActe>
+                <nomCanonique>Motion de censure</nomCanonique>
+                <libelleCourt>Motion de censure</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2023-12-16T00:00:00.000+01:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <texteAssocie>MIONANR5L16B1985-N30</texteAssocie>
+              <dateRetrait xsi:nil="true"/>
+            </acteLegislatif>
+          </actesLegislatifs>
+          <texteAssocie>DECLANR5L16B1985-N0</texteAssocie>
+          <typeDeclaration>
+            <fam_code>Art.49.3</fam_code>
+            <libelle>Déclaration engageant la responsabilité du Gouvernement devant l'Assemblée nationale sur le vote d'un texte</libelle>
+          </typeDeclaration>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

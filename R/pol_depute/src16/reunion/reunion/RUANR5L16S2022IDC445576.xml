@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2022IDC445576</uid>
+  <timeStampDebut>2022-09-28T21:30:00.000+02:00</timeStampDebut>
+  <lieu>
+    <lieuRef>SLANPBS6237</lieuRef>
+    <libelleLong>Salle 6237 – Palais Bourbon, 2ème sous-sol</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Annulé</etat>
+    <chrono>
+      <creation>2022-09-14T00:00:00.000+02:00</creation>
+      <cloture>2022-09-28T00:00:00.000+02:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO419865</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Éventuellement, suite de l'ordre du jour de l'après-midi.</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>éventuellement, suite de l'ordre du jour de l'après-midi.</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2022IDC445576PT31542</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2022-09-22T00:00:00.000+02:00</creation>
+            <cloture>2022-09-28T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Eventuellement, suite de l'examen de la proposition de loi visant à lutter contre les plastiques dangereux pour l’environnement et la santé (n° 205) (M. Jimmy Pahun, rapporteur)</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2022IDC445576PT31543</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2022-09-22T00:00:00.000+02:00</creation>
+            <cloture>2022-09-28T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Eventuellement, suite de l'examen de la proposition de loi, adoptée par le Sénat, visant à limiter l’engrillagement des espaces naturels et à protéger la propriété privée (n° 134) (M. Richard Ramos, rapporteur) </objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

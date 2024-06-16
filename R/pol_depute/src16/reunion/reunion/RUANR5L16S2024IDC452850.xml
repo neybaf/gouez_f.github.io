@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2024IDC452850</uid>
+  <timeStampDebut>2024-05-16T09:00:00.000+02:00</timeStampDebut>
+  <timeStampFin>2024-05-16T12:45:00.000+02:00</timeStampFin>
+  <lieu>
+    <lieuRef>SLAN101RUSLAM</lieuRef>
+    <libelleLong>Salle Lamartine – 101 rue de l'Université, 1er sous-sol</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Confirmé</etat>
+    <chrono>
+      <creation>2024-05-15T00:00:00.000+02:00</creation>
+      <cloture xsi:nil="true"/>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO420375</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Les Rencontres de l'évaluation - Édition 2024 :&#13;- ouverture des travaux par Mme Yaël Braun-Pivet, Présidente de l'Assemblée nationale, et M. Pierre Moscovici, Premier président de la Cour des comptes ;&#13;- table ronde 1 : Comment promouvoir l'évaluation au niveau local ?&#13;- table ronde 2 : Comment mieux utiliser l'évaluation dans la décision politique ?</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>Les Rencontres de l'évaluation - Édition 2024 :</item>
+      <item>ouverture des travaux par Mme Yaël Braun-Pivet, Présidente de l'Assemblée nationale, et M. Pierre Moscovici, Premier président de la Cour des comptes ;</item>
+      <item>table ronde 1 : Comment promouvoir l'évaluation au niveau local ?</item>
+      <item>table ronde 2 : Comment mieux utiliser l'évaluation dans la décision politique ?</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2024IDC452850PT34139</uid>
+        <cycleDeVie>
+          <etat>Confirmé</etat>
+          <chrono>
+            <creation>2024-05-15T00:00:00.000+02:00</creation>
+            <cloture xsi:nil="true"/>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs>
+          <dossierRef>DLR5L16N49130</dossierRef>
+        </dossiersLegislatifsRefs>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

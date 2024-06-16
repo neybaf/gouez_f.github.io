@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seance_type">
+  <uid>RUANR5L16S2023IDS26465</uid>
+  <timeStampDebut>2022-10-07T21:30:00.000+02:00</timeStampDebut>
+  <lieu>
+    <lieuRef>AN</lieuRef>
+    <libelleLong>Assemblée nationale</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Supprimé</etat>
+    <chrono>
+      <creation>2022-10-03T00:00:00.000+02:00</creation>
+      <cloture>2022-10-06T00:00:00.000+02:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO791932</organeReuniRef>
+  <participants xsi:nil="true"/>
+  <visioConference>false</visioConference>
+  <sessionRef>SCR5A2023O1</sessionRef>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ xsi:nil="true"/>
+    <resumeODJ xsi:nil="true"/>
+    <pointsODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26465PT44482</uid>
+        <cycleDeVie>
+          <etat>Supprimé</etat>
+          <chrono>
+            <creation>2022-10-03T00:00:00.000+02:00</creation>
+            <cloture>2022-10-04T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Suite odj de l'après-midi</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Questions au Gouvernement</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+      <pointODJ xsi:type="podjSeanceConfPres_type">
+        <uid>RUANR5L16S2023IDS26465PT44499</uid>
+        <cycleDeVie>
+          <etat>Supprimé</etat>
+          <chrono>
+            <creation>2022-10-04T00:00:00.000+02:00</creation>
+            <cloture>2022-10-06T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Suite de la discussion du projet de loi portant mesures d’urgence relatives au fonctionnement du marché du travail en vue du plein emploi</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Suite de la discussion</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+        <natureTravauxODJ>ODJPR</natureTravauxODJ>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <identifiants>
+    <numSeanceJO xsi:nil="true"/>
+    <idJO xsi:nil="true"/>
+    <quantieme>Troisième</quantieme>
+    <DateSeance>2022-10-07+02:00</DateSeance>
+  </identifiants>
+</reunion>

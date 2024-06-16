@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierMissionControle_Type">
+  <uid>DLR5L16N47847</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Rapport d'information déposé en application de l'article 145-7 alinéa 1 du règlement, par la commission des affaires économiques sur l’évaluation de la loi n° 2019-1147 du 8 novembre 2019 relative à l’énergie et au climat</titre>
+    <titreChemin>evaluation_climat_energie</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>19</code>
+    <libelle>Rapport d'information sans mission</libelle>
+  </procedureParlementaire>
+  <initiateur/>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN20-47847</uid>
+      <codeActe>AN20</codeActe>
+      <libelleActe>
+        <nomCanonique>Travaux</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotRapport_Type">
+          <uid>L16-VD213233</uid>
+          <codeActe>AN20-RAPPORT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt de rapport</nomCanonique>
+            <libelleCourt>Dépôt de rapport</libelleCourt>
+          </libelleActe>
+          <organeRef>PO419610</organeRef>
+          <dateActe>2023-05-09T00:00:00.000+02:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>RINFANR5L16B1193</texteAssocie>
+          <texteAdopte xsi:nil="true"/>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

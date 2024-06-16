@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierMissionControle_Type">
+  <uid>DLR5L16N49047</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Adaptation de l'école aux enjeux climatiques</titre>
+    <titreChemin>adaptation_ecole_changement_climatique</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>19</code>
+    <libelle>Rapport d'information sans mission</libelle>
+  </procedureParlementaire>
+  <initiateur/>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN20-49047</uid>
+      <codeActe>AN20</codeActe>
+      <libelleActe>
+        <nomCanonique>Travaux</nomCanonique>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="DepotRapport_Type">
+          <uid>L16-VD216848</uid>
+          <codeActe>AN20-RAPPORT</codeActe>
+          <libelleActe>
+            <nomCanonique>Dépôt de rapport</nomCanonique>
+            <libelleCourt>Dépôt de rapport</libelleCourt>
+          </libelleActe>
+          <organeRef>PO419604</organeRef>
+          <dateActe>2023-12-06T00:00:00.000+01:00</dateActe>
+          <actesLegislatifs xsi:nil="true"/>
+          <texteAssocie>RINFANR5L16B1974</texteAssocie>
+          <texteAdopte xsi:nil="true"/>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>

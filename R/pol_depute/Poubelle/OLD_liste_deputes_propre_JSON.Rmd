@@ -1,0 +1,263 @@
+```{r}
+
+# Load necessary libraries
+library(jsonlite)
+library(dplyr)
+
+# Define the directory containing JSON files for organes
+json_dir_orga <- "/Users/fabiengouez/Documents/GitHub/blog/shiny_depute/src/AMO10/organes/"  # Change this to your actual directory
+
+# Function to extract required information from a JSON file
+extract_organe_info <- function(json_file) {
+  json_data <- fromJSON(json_file)
+  
+  # Check if the organe has codeType "PARPOL"
+  if (json_data$codeType == "PARPOL") {
+    uid <- json_data$uid
+    libelle <- json_data$libelle
+    libelleAbrege <- json_data$libelleAbrege
+    
+    # Create a data frame with the extracted information
+    return(data.frame(uid = uid, libelle = libelle, libelleAbrege = libelleAbrege, stringsAsFactors = FALSE))
+  }
+  
+  # Return NULL if the condition is not met
+  return(NULL)
+}
+
+# List all JSON files in the directory
+json_files <- list.files(json_dir_orga, pattern = "\\.json$", full.names = TRUE)
+
+# Apply the function to each JSON file and combine results into a single data frame
+results_orga <- do.call(rbind, lapply(json_files, extract_organe_info))
+
+# Display the results
+print(results_orga)
+```
+```{r}
+# Load necessary libraries
+library(jsonlite)
+library(dplyr)
+
+# Define the directory containing JSON files for organes
+json_dir_orga <- "/Users/fabiengouez/Documents/GitHub/blog/shiny_depute/src/AMO10/organes/"  # Change this to your actual directory
+
+# Function to extract required information from a JSON file
+extract_organe_info <- function(json_file) {
+  json_data <- fromJSON(json_file)
+  
+  # Check if the organe has codeType "PARPOL"
+  if (json_data$codeType == "GP") {
+    uid <- json_data$uid
+    libelle <- json_data$libelle
+    libelleAbrege <- json_data$libelleAbrege
+    
+    # Create a data frame with the extracted information
+    return(data.frame(uid = uid, libelle = libelle, libelleAbrege = libelleAbrege, stringsAsFactors = FALSE))
+  }
+  
+  # Return NULL if the condition is not met
+  return(NULL)
+}
+
+# List all JSON files in the directory
+json_files <- list.files(json_dir_orga, pattern = "\\.json$", full.names = TRUE)
+
+# Apply the function to each JSON file and combine results into a single data frame
+results_groupe <- do.call(rbind, lapply(json_files, extract_organe_info))
+
+# Display the results
+print(results_groupe)
+```
+
+```{r}
+# Load necessary libraries
+library(jsonlite)
+library(dplyr)
+
+# Define the directories containing JSON files
+# Load necessary libraries
+library(jsonlite)
+library(dplyr)
+
+# Define the directory containing JSON files
+json_dir_acteurs <- "/Users/fabiengouez/Documents/GitHub/blog/shiny_depute/src/AMO10/acteurs/"
+
+# Function to extract civ, prenom, and nom from a JSON file
+xtract_basic_info <- function(json_file) {
+  # Lire le fichier JSON
+  json_data <- fromJSON(json_file)
+  
+  # Extraire les informations de base
+  pa_id <- json_data$uid$`#text`
+  civ <- json_data$etatCivil$ident$civ
+  prenom <- json_data$etatCivil$ident$prenom
+  nom <- json_data$etatCivil$ident$nom
+  
+  # Initialiser les listes pour stocker les informations de mandat
+  mandats_list <- json_data$mandats$mandat
+  dept <- c()
+  numDepartement <- c()
+  numCirco <- c()
+  
+  # Parcourir les mandats pour extraire les informations pertinentes
+  for (mandat in mandats_list) {
+    if (mandat$typeOrgane == "ASSEMBLEE") {
+      if (!is.null(mandat$election$lieu$numDepartement)) {
+        numDepartement <- c(numDepartement, mandat$election$lieu$numDepartement)
+      }
+      if (!is.null(mandat$election$lieu$numCirco)) {
+        numCirco <- c(numCirco, mandat$election$lieu$numCirco)
+      }
+    }
+  }
+  
+  # Retourner les informations extraites
+  return(list(
+    acteurRef = acteurRef,
+    civ = civ,
+    prenom = prenom,
+    nom = nom,
+    numDepartement = numDepartement,
+    numCirco = numCirco
+  ))
+}
+
+  
+  # Create a data frame with the extracted information
+  data.frame(acteurRef = pa_id, civ = civ, prenom = prenom, nom = nom, numDepartement = numDepartement, numCirco = numCirco,stringsAsFactors = FALSE)
+
+
+# List all JSON files in the directory
+json_files <- list.files(json_dir_acteurs, pattern = "\\.json$", full.names = TRUE)
+
+# Apply the function to each JSON file and combine results into a single data frame
+results <- do.call(rbind, lapply(json_files, extract_basic_info))
+
+# Display the intermediate results
+print(results)
+```
+```{r}
+# Function to check and fill uid and libelle
+fill_uid_libelle <- function(json_file, orga_data) {
+  json_data <- fromJSON(json_file)
+  
+  # Initialize uid and libelle as NA
+  uid <- NA
+  libelle <- NA
+  
+  # Check if any of the organe codes are present in the JSON data
+  for (organe_uid in orga_data$uid) {
+    if (organe_uid %in% unlist(json_data)) {
+      uid <- organe_uid
+      libelle <- orga_data$libelle[orga_data$uid == organe_uid]
+      break
+    }
+  }
+  
+  return(data.frame(uid = uid, libelle = libelle, stringsAsFactors = FALSE))
+}
+
+# Apply the function to each JSON file and update the results dataframe
+uid_libelle_results <- do.call(rbind, lapply(json_files, fill_uid_libelle, orga_data = results_orga))
+
+# Update the results dataframe with uid and libelle
+results_deputes <- results %>%
+  mutate(parti_uid = uid_libelle_results$uid, parti_libelle = uid_libelle_results$libelle)
+# Display the final results
+print(results_deputes)
+```
+
+
+
+```{r}
+# Charger les packages nécessaires
+library(jsonlite)
+library(dplyr)
+
+# Fonction pour vérifier et remplir uid et libelle
+fill_uid_libelle <- function(json_file, orga_data) {
+  json_data <- fromJSON(json_file)
+  
+  # Initialiser uid et libelle comme NA
+  uid <- NA
+  libelle <- NA
+  
+  # Vérifier si l'un des codes d'organe est présent dans les données JSON
+  for (organe_uid in orga_data$uid) {
+    if (organe_uid %in% unlist(json_data)) {
+      uid <- organe_uid
+      libelle <- orga_data$libelle[orga_data$uid == organe_uid]
+      break
+    }
+  }
+  
+  return(data.frame(uid = uid, libelle = libelle, stringsAsFactors = FALSE))
+}
+
+# Appliquer la fonction à chaque fichier JSON pour results_orga
+uid_libelle_results <- do.call(rbind, lapply(json_files, function(file) {
+  fill_uid_libelle(file, orga_data = results_orga)
+}))
+
+# Appliquer la fonction à chaque fichier JSON pour results_groupe
+uid_libelle_results1 <- do.call(rbind, lapply(json_files, function(file) {
+  fill_uid_libelle(file, orga_data = results_groupe)
+}))
+
+# Vérifier si uid_libelle_results et uid_libelle_results1 ont le même nombre de lignes que json_files
+if (nrow(uid_libelle_results) != length(json_files) || nrow(uid_libelle_results1) != length(json_files)) {
+  stop("Le nombre de résultats uid_libelle ne correspond pas au nombre de fichiers JSON")
+}
+
+# Ajouter des index aux résultats pour faciliter la fusion
+uid_libelle_results$index <- seq_len(nrow(uid_libelle_results))
+uid_libelle_results1$index <- seq_len(nrow(uid_libelle_results1))
+results$index <- seq_len(nrow(results))
+
+# Fusionner les résultats avec le dataframe original en utilisant les index
+results_deputes <- results %>%
+  left_join(uid_libelle_results, by = "index") %>%
+  left_join(uid_libelle_results1, by = "index", suffix = c("_parti", "_groupe")) %>%
+  select(-index)
+
+
+
+# Afficher les résultats finaux pour vérifier
+print("Structure de results_deputes après la fusion:")
+print(head(results_deputes))
+
+# Afficher les résultats finaux complets
+print(results_deputes)
+```
+
+```{r}
+write.csv(results_deputes, "listedeputes.csv", row.names = FALSE)
+```
+
+
+```{r}
+# Installer les packages nécessaires si ce n'est pas déjà fait
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+
+# Charger la bibliothèque dplyr
+library(dplyr)
+
+
+# Filtrer les données de parti_groupe pour PARPOL et GP
+parpol_data <- parti_groupe %>% filter(codeType == "PARPOL")
+gp_data <- parti_groupe %>% filter(codeType == "GP")
+
+# Filtrer les données de parti_groupe pour PARPOL
+parpol_data <- parti_groupe %>%
+  filter(codeType == "PARPOL") %>%
+  select(parpol_uid = uid, parpol_libelle = libelle, parpol_libelleAbrege = libelleAbrege)
+
+# Jointure avec results_unique pour ajouter les colonnes de parpol_data
+depute_with_parpol <- depute %>%
+  left_join(parpol_data, by = c("parpol_uid" = "parpol_uid"))
+
+```
+

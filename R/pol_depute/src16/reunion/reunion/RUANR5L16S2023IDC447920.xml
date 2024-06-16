@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2023IDC447920</uid>
+  <timeStampDebut>2023-05-03T15:00:00.000+02:00</timeStampDebut>
+  <timeStampFin>2023-05-03T19:30:00.000+02:00</timeStampFin>
+  <lieu>
+    <lieuRef>SLAN33SDS4223</lieuRef>
+    <libelleLong>Salle 4223 – Commission des affaires étrangères, 33 rue Saint Dominique, 2ème étage</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Annulé</etat>
+    <chrono>
+      <creation>2023-04-06T00:00:00.000+02:00</creation>
+      <cloture>2023-05-03T00:00:00.000+02:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO59047</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Suite de l’examen,ouvert à la presse, pour avis, du projet de loi relatif à la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense (n° 1033) (Mme Laetitia Saint-Paul, rapporteure pour avis).</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>suite de l’examen,ouvert à la presse, pour avis, du projet de loi relatif à la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense (n° 1033) (Mme Laetitia Saint-Paul, rapporteure pour avis).</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2023IDC447920PT32383</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2023-04-06T00:00:00.000+02:00</creation>
+            <cloture>2023-05-03T00:00:00.000+02:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

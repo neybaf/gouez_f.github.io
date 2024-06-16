@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<reunion xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="reunionCommission_type">
+  <uid>RUANR5L16S2023IDC447242</uid>
+  <timeStampDebut>2023-03-15T09:00:00.000+01:00</timeStampDebut>
+  <timeStampFin>2023-03-15T13:00:00.000+01:00</timeStampFin>
+  <lieu>
+    <lieuRef>SLAN33SDS4223</lieuRef>
+    <libelleLong>Salle 4223 – Commission des affaires étrangères, 33 rue Saint Dominique, 2ème étage</libelleLong>
+  </lieu>
+  <cycleDeVie>
+    <etat>Annulé</etat>
+    <chrono>
+      <creation>2023-02-17T00:00:00.000+01:00</creation>
+      <cloture>2023-02-17T00:00:00.000+01:00</cloture>
+    </chrono>
+  </cycleDeVie>
+  <demandeur xsi:nil="true"/>
+  <organeReuniRef>PO59047</organeReuniRef>
+  <participants>
+    <participantsInternes/>
+    <personnesAuditionnees/>
+  </participants>
+  <visioConference>false</visioConference>
+  <sessionRef xsi:nil="true"/>
+  <ouverturePresse>true</ouverturePresse>
+  <captationVideo>true</captationVideo>
+  <ODJ>
+    <convocationODJ>
+      <item>Examen, ouvert à la presse, et vote sur le projet de loi autorisant l’approbation de la résolution A.1152 (32) relative aux amendements à la convention du 6 mars 1948 portant création de l’Organisation maritime internationale (ensemble une annexe), adoptée le 8 décembre 2021 (n° 690) (M. Frédéric Falcon, rapporteur).</item>
+      <item>Audition, ouverte à la presse, de M. Benjamin Gallezot, délégué interministériel aux approvisionnements en minerais et métaux stratégiques.</item>
+    </convocationODJ>
+    <resumeODJ>
+      <item>examen, ouvert à la presse, et vote sur le projet de loi autorisant l’approbation de la résolution A.1152 (32) relative aux amendements à la convention du 6 mars 1948 portant création de l’Organisation maritime internationale (ensemble une annexe), adoptée le 8 décembre 2021 (n° 690) (M. Frédéric Falcon, rapporteur).</item>
+      <item>audition, ouverte à la presse, de M. Benjamin Gallezot, délégué interministériel aux approvisionnements en minerais et métaux stratégiques.</item>
+    </resumeODJ>
+    <pointsODJ>
+      <pointODJ xsi:type="podjReunion_type">
+        <uid>RUANR5L16S2023IDC447242PT32249</uid>
+        <cycleDeVie>
+          <etat>Annulé</etat>
+          <chrono>
+            <creation>2023-02-17T00:00:00.000+01:00</creation>
+            <cloture>2023-02-17T00:00:00.000+01:00</cloture>
+          </chrono>
+        </cycleDeVie>
+        <objet>Examen du texte</objet>
+        <demandeurPoint xsi:nil="true"/>
+        <procedure xsi:nil="true"/>
+        <dossiersLegislatifsRefs/>
+        <typePointODJ>Examen</typePointODJ>
+        <comiteSecret>false</comiteSecret>
+        <textesAssocies/>
+      </pointODJ>
+    </pointsODJ>
+  </ODJ>
+  <compteRenduRef xsi:nil="true"/>
+  <formatReunion>Ordinaire</formatReunion>
+  <infosReunionsInternationale>
+    <estReunionInternationale>false</estReunionInternationale>
+    <listePays xsi:nil="true"/>
+  </infosReunionsInternationale>
+</reunion>

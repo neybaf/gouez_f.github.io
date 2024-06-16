@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dossierParlementaire xmlns="http://schemas.assemblee-nationale.fr/referentiel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DossierIniativeExecutif_Type">
+  <uid>DLR5L16N49575</uid>
+  <legislature>16</legislature>
+  <titreDossier>
+    <titre>Déclaration du Gouvernement relative au débat sur l'accord de sécurité franco-ukrainien et la situation en Ukraine, suivie d'un débat et d'un vote</titre>
+    <titreChemin>declaration_gouvernement_debat_accord_ukraine</titreChemin>
+    <senatChemin xsi:nil="true"/>
+  </titreDossier>
+  <procedureParlementaire>
+    <code>11</code>
+    <libelle>Déclaration du gouvernement avec ou sans vote sans engagement de responsabilité</libelle>
+  </procedureParlementaire>
+  <initiateur>
+    <acteurs>
+      <acteur>
+        <acteurRef>PA722190</acteurRef>
+        <mandatRef>PM833697</mandatRef>
+      </acteur>
+    </acteurs>
+  </initiateur>
+  <actesLegislatifs>
+    <acteLegislatif xsi:type="Etape_Type">
+      <uid>L16-AN21-49575</uid>
+      <codeActe>AN21</codeActe>
+      <libelleActe>
+        <nomCanonique>Débat</nomCanonique>
+        <libelleCourt>Débat</libelleCourt>
+      </libelleActe>
+      <organeRef>PO791932</organeRef>
+      <dateActe xsi:nil="true"/>
+      <actesLegislatifs>
+        <acteLegislatif xsi:type="Etape_Type">
+          <uid>L16-AN21-DEBATS-49575</uid>
+          <codeActe>AN21-DEBATS</codeActe>
+          <libelleActe>
+            <nomCanonique>Discussion en séance publique</nomCanonique>
+            <libelleCourt>Discussion en séance publique</libelleCourt>
+          </libelleActe>
+          <organeRef>PO791932</organeRef>
+          <dateActe xsi:nil="true"/>
+          <actesLegislatifs>
+            <acteLegislatif xsi:type="DiscussionSeancePublique_Type">
+              <uid>L16-VD218414S47463</uid>
+              <codeActe>AN21-DEBATS-SEANCE</codeActe>
+              <libelleActe>
+                <nomCanonique>Discussion en séance publique</nomCanonique>
+                <libelleCourt>Discussion en séance publique</libelleCourt>
+              </libelleActe>
+              <organeRef>PO791932</organeRef>
+              <dateActe>2024-03-12T00:00:00.000+01:00</dateActe>
+              <actesLegislatifs xsi:nil="true"/>
+              <reunionRef>RUANR5L16S2024IDS28139</reunionRef>
+              <odjRef>RUANR5L16S2024IDS28139PT47463</odjRef>
+            </acteLegislatif>
+          </actesLegislatifs>
+        </acteLegislatif>
+      </actesLegislatifs>
+    </acteLegislatif>
+  </actesLegislatifs>
+  <fusionDossier/>
+</dossierParlementaire>
